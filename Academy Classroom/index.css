@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/harabara');
+
+:root {
+  /* Primary Brand Colors */
+  --brand-teal: #81d742;
+  --brand-teal-dark: #5cad2a;
+  --brand-teal-deep: #00343C;
+  --brand-titanium: #304040;
+  
+  /* Neutral Colors */
+  --brand-tint: #f4f7f8;
+  --brand-tint-blue: #f6f8ff;
+  --brand-sand: #ffffff;
+  --brand-white: #ffffff;
+  
+  /* Accent Variants */
+  --brand-teal-soft: rgba(129, 215, 66, 0.1);
+  --brand-teal-light: #e6f2f4;
+
+  font-family: 'Roboto', 'Harabara', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--brand-titanium);
+  background-color: var(--brand-sand);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--brand-sand);
+  color: var(--brand-titanium);
+}
+
+a {
+  color: var(--brand-teal);
+}
+
+/* Brand Gradient Utilities */
+.brand-gradient {
+  background: radial-gradient(circle at top right, rgba(129, 215, 66, 0.15), transparent),
+    linear-gradient(135deg, rgba(129, 215, 66, 0.1), rgba(0, 52, 60, 0.05));
+}
+
+.brand-gradient-accent {
+  background: linear-gradient(135deg, var(--brand-teal), var(--brand-teal-dark));
+}
+
+.brand-gradient-blue {
+  background: linear-gradient(135deg, var(--brand-teal), var(--brand-teal-deep));
+}
+
+/* Brand Chip */
+.brand-chip {
+  border: 1px solid rgba(129, 215, 66, 0.3);
+  color: var(--brand-teal);
+}
+
+.brand-chip:hover {
+  background-color: rgba(129, 215, 66, 0.08);
+}
+
+/* Brand Button */
+.brand-button {
+  background: var(--brand-teal);
+  color: var(--brand-white);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.brand-button:hover {
+  filter: brightness(1.1);
+}
+
+/* Brand Badge */
+.brand-badge {
+  background: var(--brand-teal-soft);
+  color: var(--brand-teal);
+}
+
+/* Card Styles */
+.brand-card {
+  background: var(--brand-white);
+  border: 1px solid rgba(129, 215, 66, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 52, 60, 0.05);
+}
+
+.brand-card-hover:hover {
+  border-color: rgba(129, 215, 66, 0.4);
+  box-shadow: 0 10px 25px rgba(0, 52, 60, 0.1);
+}
+
+/* Background Utilities */
+.bg-brand-teal { background-color: var(--brand-teal); }
+.bg-brand-teal-dark { background-color: var(--brand-teal-dark); }
+.bg-brand-tint { background-color: var(--brand-tint); }
+.bg-brand-tint-blue { background-color: var(--brand-tint-blue); }
+.bg-brand-teal-soft { background-color: var(--brand-teal-soft); }
+
+/* Text Utilities */
+.text-brand-teal { color: var(--brand-teal); }
+.text-brand-teal-dark { color: var(--brand-teal-dark); }
+.text-brand-teal-deep { color: var(--brand-teal-deep); }
+.text-brand-titanium { color: var(--brand-titanium); }
+
+/* Border Utilities */
+.border-brand-teal { border-color: var(--brand-teal); }
+.border-brand-teal-light { border-color: rgba(129, 215, 66, 0.3); }
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Simple utility for fade-in used in Register */
+.animate-in {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+.fade-in {
+  animation-name: fadeIn;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.zoom-in {
+    animation-name: zoomIn;
+}
+@keyframes zoomIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Flip Card Animation Styles */
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+.transform-style-3d {
+    transform-style: preserve-3d;
+}
+
+.backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+    transform: rotateY(180deg);
+}
+
+.group:hover .group-hover\\:rotate-y-180 {
+    transform: rotateY(180deg);
+}

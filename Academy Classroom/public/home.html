@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emalangeni Technologies - IT Solutions, WiFi & Fibre Connectivity</title>
+    <meta name="description" content="Emalangeni Technologies provides managed IT services, wireless WiFi solutions, and fibre connectivity for businesses, schools, and communities across South Africa." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --brand-green: #81d742; --brand-teal: #00343C; --brand-dark: #304040; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { border-color: #81d742; background: white; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .card-hover:hover .icon-box { background: #81d742; }
+        .card-hover:hover .icon-box svg { color: white; }
+        .btn-primary { background: #81d742; color: #00343C; border-radius: 9999px; font-weight: 700; padding: 1rem 2rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s; }
+        .btn-primary:hover { background: #5cad2a; }
+        .btn-teal { background: #00343C; color: white; border-radius: 9999px; font-weight: 700; padding: 1rem 2rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s; }
+        .btn-teal:hover { background: #002028; }
+    </style>
+</head>
+<body class="bg-white antialiased">
+
+<!-- ── Top Social Strip ──────────────────────────────── -->
+<div style="background:#81d742;" class="py-2">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+            <span class="text-white text-sm">Follow us:</span>
+            <a href="https://linkedin.com" target="_blank" class="text-white hover:text-[#00343C] transition-colors">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" class="text-white hover:text-[#00343C] transition-colors">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <span class="text-white/80 text-sm hidden sm:block">info@emalangenitech.co.za</span>
+            <a href="#contact" class="text-white text-sm font-semibold hover:text-[#00343C] transition-colors">Contact Us</a>
+        </div>
+    </div>
+</div>
+
+<!-- ── Navbar ─────────────────────────────────────────── -->
+<nav class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <div class="flex items-center">
+                <img src="/images/EMALANGENI TECHNOLOGIES_ORIGINAL VERSION.png" alt="Emalangeni Technologies" class="h-16 w-auto object-contain" />
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="text-[#00343C] hover:text-[#81d742] font-medium transition-colors">Home</a>
+                <a href="about-us.html" class="text-[#00343C] hover:text-[#81d742] font-medium transition-colors">About Us</a>
+                <a href="services.html" class="text-[#00343C] hover:text-[#81d742] font-medium transition-colors">Services</a>
+                <a href="insights.html" class="text-[#00343C] hover:text-[#81d742] font-medium transition-colors">Insights</a>
+                <a href="register.html" class="text-[#00343C] hover:text-[#81d742] font-medium transition-colors">Register</a>
+            </div>
+            <div class="hidden md:flex items-center">
+                <a href="#contact" class="bg-[#81d742] text-[#00343C] px-6 py-2.5 rounded-lg font-semibold hover:bg-[#5cad2a] transition-colors">Contact Us</a>
+            </div>
+            <button id="menuBtn" class="md:hidden p-2 rounded-lg text-[#00343C] hover:bg-gray-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200 px-4 py-4 space-y-2">
+        <a href="#" class="block px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8]">Home</a>
+        <a href="about-us.html" class="block px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8]">About Us</a>
+        <a href="services.html" class="block px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8]">Services</a>
+        <a href="insights.html" class="block px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8]">Insights</a>
+        <a href="register.html" class="block px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8]">Register</a>
+        <div class="pt-2 border-t border-gray-100">
+            <a href="#contact" class="block w-full text-center bg-[#81d742] text-[#00343C] py-3 rounded-xl font-semibold hover:bg-[#5cad2a]">Contact Us</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ── Hero Section ────────────────────────────────────── -->
+<section class="relative pt-16 pb-8 lg:pt-20 lg:pb-12 min-h-screen flex items-center overflow-hidden">
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="/video/OPTION_01.mp4" type="video/mp4" />
+    </video>
+    <!-- Green stripe -->
+    <div class="absolute top-0 left-0 right-0 h-1.5 z-20" style="background:#81d742;"></div>
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/40 z-0"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div class="text-center max-w-5xl mx-auto">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white tracking-tight leading-tight mb-8 lg:mb-12">
+                Connecting the world through <span class="text-black">Technology</span>
+            </h1>
+            <br />
+
+            <!-- Two Cards -->
+            <div class="grid md:grid-cols-2 gap-4 lg:gap-6 max-w-4xl mx-auto">
+                <!-- Emalangeni Connect -->
+                <div class="group relative overflow-hidden bg-transparent rounded-2xl lg:rounded-3xl border-2 border-slate-200 hover:border-[#81d742]/30 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="absolute inset-0 bg-black/55 pointer-events-none"></div>
+                    <div class="p-5 lg:p-6 text-left h-full flex flex-col relative z-10">
+                        <div class="w-12 h-12 lg:w-14 lg:h-14 rounded-xl flex items-center justify-center mb-4 transition-transform" style="background: linear-gradient(135deg, rgba(129,215,66,0.2), rgba(146,171,196,0.1));">
+                            <svg class="w-6 h-6 lg:w-7 lg:h-7 text-[#81d742]" style="color:#81d742" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
+                        </div>
+                        <h3 class="text-lg lg:text-xl font-bold text-white mb-2">Emalangeni Connect</h3>
+                        <p class="text-sm mb-4 leading-relaxed" style="color:rgba(255,255,255,0.8)">
+                            High-speed fibre and wireless connectivity solutions for homes, businesses, and communities — keeping everyone seamlessly connected.
+                        </p>
+                        <ul class="hidden lg:block space-y-2 mb-4 flex-grow">
+                            <li class="flex items-center text-white text-sm"><div class="w-1.5 h-1.5 rounded-full mr-2 flex-shrink-0" style="background:#81d742"></div>Fibre &amp; wireless broadband</li>
+                            <li class="flex items-center text-white text-sm"><div class="w-1.5 h-1.5 rounded-full mr-2 flex-shrink-0" style="background:#81d742"></div>WiFi hotspot solutions</li>
+                            <li class="flex items-center text-white text-sm"><div class="w-1.5 h-1.5 rounded-full mr-2 flex-shrink-0" style="background:#81d742"></div>Campus-wide connectivity</li>
+                        </ul>
+                        <button class="w-full py-3 lg:py-3.5 rounded-xl font-bold flex items-center justify-center mt-auto relative z-20 transition-colors" style="background:#00343C; color:white;">
+                            Emalangeni Connect
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Emalangeni Financial Services -->
+                <div class="group relative overflow-hidden bg-transparent rounded-2xl lg:rounded-3xl border-2 border-slate-200 hover:border-[#81d742]/30 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="absolute inset-0 bg-black/55 pointer-events-none"></div>
+                    <div class="p-5 lg:p-6 text-left h-full flex flex-col relative z-10">
+                        <div class="w-12 h-12 lg:w-14 lg:h-14 rounded-xl flex items-center justify-center mb-4" style="background: linear-gradient(135deg, rgba(129,215,66,0.2), rgba(146,171,196,0.1));">
+                            <svg class="w-6 h-6 lg:w-7 lg:h-7" style="color:#81d742" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <h3 class="text-lg lg:text-xl font-bold text-white mb-2">Emalangeni Financial Services</h3>
+                        <p class="text-sm mb-4 leading-relaxed" style="color:rgba(255,255,255,0.8)">
+                            Empowering individuals and businesses with accessible, innovative financial solutions tailored to your growth and stability.
+                        </p>
+                        <ul class="hidden lg:block space-y-2 mb-4 flex-grow">
+                            <li class="flex items-center text-white text-sm"><div class="w-1.5 h-1.5 rounded-full mr-2 flex-shrink-0" style="background:#81d742"></div>Business financial solutions</li>
+                            <li class="flex items-center text-white text-sm"><div class="w-1.5 h-1.5 rounded-full mr-2 flex-shrink-0" style="background:#81d742"></div>Personal financial services</li>
+                            <li class="flex items-center text-white text-sm"><div class="w-1.5 h-1.5 rounded-full mr-2 flex-shrink-0" style="background:#81d742"></div>Investment &amp; growth planning</li>
+                        </ul>
+                        <button class="w-full py-3 lg:py-3.5 rounded-xl font-bold flex items-center justify-center mt-auto relative z-20 transition-colors" style="background:#00343C; color:white;">
+                            Emalangeni Financial Services
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── Our Services ────────────────────────────────────── -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14">
+            <span class="text-xs font-bold uppercase tracking-widest mb-3 block" style="color:#81d742; letter-spacing:0.3em;">What We Offer</span>
+            <h2 class="text-3xl font-bold sm:text-4xl" style="color:#00343C;">Our Services</h2>
+            <p class="mt-4 text-lg max-w-3xl mx-auto" style="color:#304040;">
+                Emalangeni Technologies is dedicated to delivering exceptional services to our clients, helping them leverage technology to achieve their business goals.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Managed IT -->
+            <div class="card-hover group bg-[#f4f7f8] rounded-2xl p-8 border border-transparent">
+                <div class="icon-box w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-colors" style="background:rgba(129,215,66,0.12);">
+                    <svg class="w-7 h-7" style="color:#81d742;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </div>
+                <h3 class="text-lg font-bold mb-3" style="color:#00343C;">Managed IT Services</h3>
+                <p class="text-sm leading-relaxed" style="color:#304040;">Emalangeni Technologies takes care of all your IT needs through our comprehensive managed IT services.</p>
+            </div>
+            <!-- Digital Transformation -->
+            <div class="card-hover group bg-[#f4f7f8] rounded-2xl p-8 border border-transparent">
+                <div class="icon-box w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-colors" style="background:rgba(129,215,66,0.12);">
+                    <svg class="w-7 h-7" style="color:#81d742;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                </div>
+                <h3 class="text-lg font-bold mb-3" style="color:#00343C;">Digital Transformation Services</h3>
+                <p class="text-sm leading-relaxed" style="color:#304040;">Emalangeni Technologies empowers businesses to embark on successful digital transformation journeys.</p>
+            </div>
+            <!-- Software Development -->
+            <div class="card-hover group bg-[#f4f7f8] rounded-2xl p-8 border border-transparent">
+                <div class="icon-box w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-colors" style="background:rgba(129,215,66,0.12);">
+                    <svg class="w-7 h-7" style="color:#81d742;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div>
+                <h3 class="text-lg font-bold mb-3" style="color:#00343C;">Software Development</h3>
+                <p class="text-sm leading-relaxed" style="color:#304040;">Our skilled software development team creates tailor-made applications and software solutions.</p>
+            </div>
+            <!-- Design & UX -->
+            <div class="card-hover group bg-[#f4f7f8] rounded-2xl p-8 border border-transparent">
+                <div class="icon-box w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-colors" style="background:rgba(129,215,66,0.12);">
+                    <svg class="w-7 h-7" style="color:#81d742;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+                </div>
+                <h3 class="text-lg font-bold mb-3" style="color:#00343C;">Design and UX Services</h3>
+                <p class="text-sm leading-relaxed" style="color:#304040;">Emalangeni Technologies offers creative design and user experience (UX) services.</p>
+            </div>
+        </div>
+        <div class="text-center mt-10">
+            <a href="services.html" class="btn-primary">Explore More <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+    </div>
+</section>
+
+<!-- ── Mission / Vision / Pioneering Change ──────────────── -->
+<section class="py-20" style="background:#00343C;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="rounded-2xl p-8" style="background:rgba(255,255,255,0.1);">
+                <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style="background:rgba(129,215,66,0.2);">
+                    <svg class="w-7 h-7" style="color:#81d742;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">Our Mission</h3>
+                <p class="leading-relaxed" style="color:rgba(255,255,255,0.8);">Fuelled by a deep passion for technology and a strong commitment to improving people's lives. We are driven by an unwavering desire to identify new markets, opportunities, and innovative ways to implement our cutting-edge solutions.</p>
+            </div>
+            <div class="rounded-2xl p-8" style="background:rgba(255,255,255,0.1);">
+                <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style="background:rgba(129,215,66,0.2);">
+                    <svg class="w-7 h-7" style="color:#81d742;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">Our Vision</h3>
+                <p class="leading-relaxed" style="color:rgba(255,255,255,0.8);">Emalangeni Technologies envisions becoming the leading and most innovative company in the connectivity and telephony space, setting new standards for excellence, and transforming the way people and businesses communicate.</p>
+            </div>
+            <div class="rounded-2xl p-8" style="background:rgba(255,255,255,0.1);">
+                <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style="background:rgba(129,215,66,0.2);">
+                    <svg class="w-7 h-7" style="color:#81d742;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">Pioneering Change</h3>
+                <p class="leading-relaxed" style="color:rgba(255,255,255,0.8);">Emalangeni Technologies is at the forefront of pioneering change in the connectivity, telephony, and IT managed service space. Our commitment to innovation, customer-centricity, and excellence sets us apart as a trailblazer.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── Why Choose Us ──────────────────────────────────── -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14">
+            <span class="text-xs font-bold uppercase mb-3 block" style="color:#81d742; letter-spacing:0.3em;">Why Us</span>
+            <h2 class="text-3xl font-bold sm:text-4xl" style="color:#00343C;">Why Choose Us</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="card-hover group text-center p-8 bg-[#f4f7f8] rounded-2xl border border-transparent">
+                <div class="icon-box w-14 h-14 rounded-xl flex items-center justify-center mb-6 mx-auto transition-colors" style="background:rgba(129,215,66,0.12);">
+                    <svg class="w-7 h-7" style="color:#81d742;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+                </div>
+                <h3 class="text-lg font-bold mb-3" style="color:#00343C;">Business Leadership</h3>
+                <p class="text-sm leading-relaxed" style="color:#304040;">Emalangeni Technologies stands out as a leader in providing valuable and cost-effective IT solutions to businesses.</p>
+            </div>
+            <div class="card-hover group text-center p-8 bg-[#f4f7f8] rounded-2xl border border-transparent">
+                <div class="icon-box w-14 h-14 rounded-xl flex items-center justify-center mb-6 mx-auto transition-colors" style="background:rgba(129,215,66,0.12);">
+                    <svg class="w-7 h-7" style="color:#81d742;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                </div>
+                <h3 class="text-lg font-bold mb-3" style="color:#00343C;">Great Customer Support</h3>
+                <p class="text-sm leading-relaxed" style="color:#304040;">We are driven by a passion for great customer support and exceptional IT services — your success is our priority.</p>
+            </div>
+            <div class="card-hover group text-center p-8 bg-[#f4f7f8] rounded-2xl border border-transparent">
+                <div class="icon-box w-14 h-14 rounded-xl flex items-center justify-center mb-6 mx-auto transition-colors" style="background:rgba(129,215,66,0.12);">
+                    <svg class="w-7 h-7" style="color:#81d742;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </div>
+                <h3 class="text-lg font-bold mb-3" style="color:#00343C;">Technology &amp; Innovation</h3>
+                <p class="text-sm leading-relaxed" style="color:#304040;">Our focus on technology and product innovation drives our commitment to delivering cutting-edge solutions to our clients.</p>
+            </div>
+            <div class="card-hover group text-center p-8 bg-[#f4f7f8] rounded-2xl border border-transparent">
+                <div class="icon-box w-14 h-14 rounded-xl flex items-center justify-center mb-6 mx-auto transition-colors" style="background:rgba(129,215,66,0.12);">
+                    <svg class="w-7 h-7" style="color:#81d742;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3 class="text-lg font-bold mb-3" style="color:#00343C;">Community Empowerment</h3>
+                <p class="text-sm leading-relaxed" style="color:#304040;">Community empowerment is a cornerstone of our values. We are dedicated to making a positive impact through various initiatives.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── Our Background ─────────────────────────────────── -->
+<section class="py-20" style="background:#f4f7f8;">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <span class="text-xs font-bold uppercase mb-3 block" style="color:#81d742; letter-spacing:0.3em;">About Us</span>
+            <h2 class="text-3xl font-bold sm:text-4xl" style="color:#00343C;">Our Background</h2>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <p class="text-lg leading-relaxed mb-6" style="color:#304040;">
+                As one of South Africa's leading black owned, technology company, Emalangeni Technologies Pty (Ltd) is at the forefront of digital transformations bringing awe inspiring technology services to the mainstream IT in order to produce better business outcomes. Our aim is focused on improving people's daily experiences and interactions through the application of new and pulsating technology services and solutions. We help provide clients with access to certified and unparalleled technical expertise, logistical support and managed IT services.
+            </p>
+            <p class="text-lg leading-relaxed mb-6" style="color:#304040;">
+                Our company strives to deliver consistence and quality in client services. We can achieve this by thoroughly understanding our customers' needs and providing custom solutions designed to meet their individual requirements.
+            </p>
+            <p class="text-lg leading-relaxed mb-4" style="color:#304040;">
+                While we understand that each market is a little different from the other, there are some core values and principles that our company aligns itself to:
+            </p>
+            <ul class="space-y-3 text-lg" style="color:#304040;">
+                <li class="flex items-start"><svg class="h-5 w-5 mr-3 mt-1 flex-shrink-0" style="color:#81d742;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Always delivering high quality services</span></li>
+                <li class="flex items-start"><svg class="h-5 w-5 mr-3 mt-1 flex-shrink-0" style="color:#81d742;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Maintaining excellent partnerships with our customers</span></li>
+                <li class="flex items-start"><svg class="h-5 w-5 mr-3 mt-1 flex-shrink-0" style="color:#81d742;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Building strong ties with the communities that we serve</span></li>
+                <li class="flex items-start"><svg class="h-5 w-5 mr-3 mt-1 flex-shrink-0" style="color:#81d742;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Always going beyond our client's expectations in order to deliver the best business results</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ── Teamwork ────────────────────────────────────────── -->
+<section class="py-20" style="background:#00343C;">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 mx-auto" style="background:rgba(129,215,66,0.2);">
+            <svg class="w-7 h-7" style="color:#81d742;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h2 class="text-3xl font-bold text-white sm:text-4xl mb-6">Teamwork</h2>
+        <p class="text-lg leading-relaxed" style="color:rgba(255,255,255,0.8);">
+            Teamwork is at the core of Emalangeni Technologies' success. Our company is driven by a group of passionate IT specialists who are dedicated to delivering excellence in technology services. We take pride in designing, building, and implementing advanced technology solutions that unlock our customers' full business potential. By merging strategy, technology, and creativity, we empower organizations to surge ahead with a competitive edge built on continuous innovation.
+        </p>
+    </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────── -->
+<section id="contact" class="bg-white py-24">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6" style="color:#00343C;">Are You Ready to Transform Your Business?</h2>
+        <p class="text-xl mb-10" style="color:#304040;">Stay up to date and never miss out. Schedule a consultation with our experts today.</p>
+        <a href="mailto:info@emalangenitech.co.za" class="btn-primary text-lg">
+            Schedule A Consultation
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+    </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────── -->
+<footer class="py-12 border-t border-gray-100" style="background:#f4f7f8;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+                <img src="/images/EMALANGENI TECHNOLOGIES_ORIGINAL VERSION.png" alt="Emalangeni Technologies" class="h-14 w-auto object-contain mb-4" />
+                <p class="text-sm" style="color:#304040;">Empowering businesses and communities across South Africa with world-class technology solutions.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4" style="color:#00343C;">Quick Links</h4>
+                <ul class="space-y-2 text-sm" style="color:#304040;">
+                    <li><a href="#" class="hover:text-[#81d742] transition-colors">Home</a></li>
+                    <li><a href="about-us.html" class="hover:text-[#81d742] transition-colors">About Us</a></li>
+                    <li><a href="services.html" class="hover:text-[#81d742] transition-colors">Services</a></li>
+                    <li><a href="insights.html" class="hover:text-[#81d742] transition-colors">Insights</a></li>
+                    <li><a href="#contact" class="hover:text-[#81d742] transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4" style="color:#00343C;">Get In Touch</h4>
+                <ul class="space-y-2 text-sm" style="color:#304040;">
+                    <li>WhatsApp: 0614448794</li>
+                    <li>Toll free: 0800014995</li>
+                    <li>E: info@emalangenitech.co.za</li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-200 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p class="text-sm" style="color:#304040;">© 2026 Emalangeni Technologies. All rights reserved.</p>
+            <div class="flex gap-6 text-sm" style="color:#304040;">
+                <a href="#" class="hover:text-[#81d742] transition-colors">Terms &amp; Conditions</a>
+                <a href="#" class="hover:text-[#81d742] transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-[#81d742] transition-colors">Cookies</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('menuBtn').addEventListener('click', function() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(py --version)",
+      "Bash(node --version:*)",
+      "Bash(npm --version)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(node extract-images.js:*)",
+      "Bash(where:*)",
+      "Bash(node render-pages.js:*)",
+      "Bash(node convert-pdf.js:*)",
+      "Bash(ls:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
