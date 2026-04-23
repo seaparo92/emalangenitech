@@ -2,16 +2,18 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
     ArrowRight,
-    Brain,
-    BookOpen,
-    GraduationCap,
-    School,
+    Shield,
+    Wifi,
+    Globe,
+    Zap,
     TrendingUp,
     Clock,
     Calendar,
     Search,
     Tag,
     ChevronRight,
+    Cpu,
+    Phone,
 } from 'lucide-react';
 import { LandingNavbar } from '../components/LandingNavbar';
 import { ContactFormModal } from '../components/ContactFormModal';
@@ -27,88 +29,88 @@ type Article = {
     icon: React.ElementType;
 };
 
-const CATEGORIES = ['All', 'AI in Education', 'CAPS Curriculum', 'Study Tips', 'School Management', 'EdTech'];
+const CATEGORIES = ['All', 'Digital Transformation', 'Cybersecurity', 'Connectivity', 'Telephony & VoIP', 'Managed IT Services'];
 
 const ARTICLES: Article[] = [
     {
         id: '1',
-        title: 'How AI is Revolutionising Personalised Learning in South Africa',
-        excerpt: 'Artificial intelligence is no longer a futuristic concept in education — it\'s here, and it\'s changing the way South African learners engage with curriculum content every day.',
-        category: 'AI in Education',
+        title: 'Challenges and Opportunities of Digital Transformation for South African Businesses',
+        excerpt: 'The digital transformation landscape in South Africa is brimming with opportunity. We explore the key challenges businesses face and how Emalangeni Technologies helps organisations navigate the journey successfully.',
+        category: 'Digital Transformation',
         date: 'April 10, 2026',
-        readTime: '6 min read',
-        featured: true,
-        icon: Brain,
-    },
-    {
-        id: '2',
-        title: 'Understanding the CAPS Curriculum: A Parent\'s Complete Guide',
-        excerpt: 'The Curriculum and Assessment Policy Statement can be confusing. Here\'s everything you need to know to support your child\'s learning from Grade R to Grade 12.',
-        category: 'CAPS Curriculum',
-        date: 'April 3, 2026',
-        readTime: '8 min read',
-        featured: true,
-        icon: BookOpen,
-    },
-    {
-        id: '3',
-        title: '10 Proven Study Techniques That Actually Work for Matric Students',
-        excerpt: 'With matric exams approaching, the right study strategies can be the difference between passing and distinction. Our education experts share the techniques that consistently deliver results.',
-        category: 'Study Tips',
-        date: 'March 28, 2026',
-        readTime: '5 min read',
-        featured: true,
-        icon: GraduationCap,
-    },
-    {
-        id: '4',
-        title: 'Why Schools Are Choosing AI-Powered Assessment Over Traditional Tests',
-        excerpt: 'Traditional pen-and-paper tests have limitations that modern educators are beginning to move past. Discover how AI assessment is improving outcomes across South African schools.',
-        category: 'School Management',
-        date: 'March 20, 2026',
-        readTime: '7 min read',
-        featured: true,
-        icon: School,
-    },
-    {
-        id: '5',
-        title: 'The Role of EdTech in Bridging the Education Gap in South Africa',
-        excerpt: 'Educational technology is proving to be a powerful equaliser. Here\'s how platforms like Emalangeni Tech are helping learners from all backgrounds access quality education.',
-        category: 'EdTech',
-        date: 'March 15, 2026',
         readTime: '6 min read',
         featured: true,
         icon: TrendingUp,
     },
     {
+        id: '2',
+        title: 'VoIP Revolution: Enabling Cost-Effective Communication Solutions in South Africa',
+        excerpt: 'In the ever-evolving landscape of communication technology, Voice over Internet Protocol (VoIP) has emerged as a powerful tool for South African businesses seeking to reduce costs and improve collaboration.',
+        category: 'Telephony & VoIP',
+        date: 'April 3, 2026',
+        readTime: '7 min read',
+        featured: true,
+        icon: Phone,
+    },
+    {
+        id: '3',
+        title: 'Digital Transformation Trends Shaping South Africa in 2026',
+        excerpt: 'In the dynamic landscape of South Africa, 2026 has marked a pivotal year for digital advancement. Discover the key trends driving businesses to adopt smarter, more connected technology strategies.',
+        category: 'Digital Transformation',
+        date: 'March 28, 2026',
+        readTime: '5 min read',
+        featured: true,
+        icon: Globe,
+    },
+    {
+        id: '4',
+        title: 'Why Managed IT Services Are the Smart Choice for Growing Businesses',
+        excerpt: 'Maintaining an in-house IT team is costly and complex. Managed IT services give South African businesses access to certified technical expertise, proactive monitoring, and round-the-clock support.',
+        category: 'Managed IT Services',
+        date: 'March 20, 2026',
+        readTime: '6 min read',
+        featured: true,
+        icon: Cpu,
+    },
+    {
+        id: '5',
+        title: 'Bridging the Connectivity Gap: Bringing Reliable Internet to South African Communities',
+        excerpt: 'Affordable, reliable connectivity is a catalyst for social and economic development. Emalangeni Technologies explores how community WiFi and fibre solutions are transforming access across South Africa.',
+        category: 'Connectivity',
+        date: 'March 15, 2026',
+        readTime: '6 min read',
+        featured: true,
+        icon: Wifi,
+    },
+    {
         id: '6',
-        title: 'Bloom\'s Taxonomy Explained: How We Design Questions That Build Thinking Skills',
-        excerpt: 'All 500,000+ questions on our platform are aligned to Bloom\'s Taxonomy. Here\'s why that matters and how it helps learners develop deeper understanding.',
-        category: 'CAPS Curriculum',
+        title: 'Cybersecurity Threats Facing South African Businesses in 2026',
+        excerpt: 'Cyber threats are growing in sophistication and frequency. From ransomware to phishing, we outline the top threats targeting South African organisations and the defences every business needs.',
+        category: 'Cybersecurity',
         date: 'March 8, 2026',
         readTime: '5 min read',
         featured: false,
-        icon: Brain,
+        icon: Shield,
     },
     {
         id: '7',
-        title: 'Helping Your Foundation Phase Child Build a Love of Learning',
-        excerpt: 'The early years of schooling are critical for developing a positive attitude towards learning. Practical tips for parents of Grade R to Grade 3 learners.',
-        category: 'Study Tips',
+        title: 'How Fibre Connectivity Is Powering Business Growth in South Africa',
+        excerpt: 'High-speed fibre internet is no longer a luxury — it\'s a business necessity. We look at how reliable fibre connectivity is enabling organisations to scale, collaborate, and compete globally.',
+        category: 'Connectivity',
         date: 'March 1, 2026',
         readTime: '4 min read',
         featured: false,
-        icon: BookOpen,
+        icon: Zap,
     },
     {
         id: '8',
-        title: 'CPD for Teachers: How 55 SACE-Accredited Courses Can Advance Your Career',
-        excerpt: 'Continuous Professional Development is essential for South African educators. Our SACE-accredited online courses make it easier than ever to grow professionally.',
-        category: 'School Management',
+        title: 'The Case for Proactive IT Support: Stop Fires Before They Start',
+        excerpt: 'Reactive IT support costs businesses more in downtime and lost productivity than a proactive managed services approach. Learn why prevention always beats the cure when it comes to your IT infrastructure.',
+        category: 'Managed IT Services',
         date: 'February 24, 2026',
         readTime: '5 min read',
         featured: false,
-        icon: GraduationCap,
+        icon: Cpu,
     },
 ];
 
@@ -147,11 +149,11 @@ export const Insights: React.FC = () => {
                                 Insights &amp; Resources
                             </span>
                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                                Education Insights<br />
+                                Technology Insights<br />
                                 <span className="text-[#81d742]">From the Experts</span>
                             </h1>
                             <p className="text-lg lg:text-xl text-white/70 mb-10 max-w-2xl leading-relaxed">
-                                Stay informed with the latest educational insights, learning strategies, curriculum guidance, and EdTech news from the Emalangeni Tech team.
+                                Stay informed with the latest technology insights, digital transformation trends, cybersecurity guidance, and IT news from the Emalangeni Technologies team.
                             </p>
                         </div>
                         {/* Search */}
@@ -280,12 +282,12 @@ export const Insights: React.FC = () => {
                         </div>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             {[
-                                { icon: Brain, title: 'AI in Education', count: '12 articles', color: 'from-[#81d742] to-[#5cad2a]' },
-                                { icon: BookOpen, title: 'CAPS Curriculum', count: '18 articles', color: 'from-[#00343C] to-[#004D57]' },
-                                { icon: GraduationCap, title: 'Study Tips', count: '24 articles', color: 'from-[#81d742] to-[#5cad2a]' },
-                                { icon: School, title: 'School Management', count: '9 articles', color: 'from-[#00343C] to-[#004D57]' },
-                                { icon: TrendingUp, title: 'EdTech Trends', count: '15 articles', color: 'from-[#81d742] to-[#5cad2a]' },
-                                { icon: BookOpen, title: 'Parent Guides', count: '11 articles', color: 'from-[#00343C] to-[#004D57]' },
+                                { icon: TrendingUp, title: 'Digital Transformation', count: '14 articles', color: 'from-[#81d742] to-[#5cad2a]' },
+                                { icon: Shield, title: 'Cybersecurity', count: '10 articles', color: 'from-[#00343C] to-[#004D57]' },
+                                { icon: Wifi, title: 'Connectivity', count: '12 articles', color: 'from-[#81d742] to-[#5cad2a]' },
+                                { icon: Phone, title: 'Telephony & VoIP', count: '8 articles', color: 'from-[#00343C] to-[#004D57]' },
+                                { icon: Cpu, title: 'Managed IT Services', count: '16 articles', color: 'from-[#81d742] to-[#5cad2a]' },
+                                { icon: Globe, title: 'Cloud Solutions', count: '9 articles', color: 'from-[#00343C] to-[#004D57]' },
                             ].map((topic) => (
                                 <button
                                     key={topic.title}

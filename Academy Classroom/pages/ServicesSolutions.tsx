@@ -74,34 +74,49 @@ const SOLUTIONS = [
 
 const TECH_FEATURES = [
     {
-        icon: Cpu,
-        title: 'Managed IT Services',
-        description: 'Comprehensive IT management with proactive monitoring, maintenance, and support to keep your systems running smoothly.',
+        icon: Headphones,
+        title: 'Telephony Services',
+        description: 'Comprehensive telephony services including VoIP solutions to facilitate seamless, cost-effective communication for your business.',
     },
     {
         icon: Wifi,
-        title: 'Wireless Solutions',
-        description: 'Design and deployment of reliable, high-performance wireless networks for businesses, schools, and communities.',
-    },
-    {
-        icon: Zap,
-        title: 'Fibre Connectivity',
-        description: 'High-speed fibre internet installation and management ensuring stable, scalable broadband connectivity.',
+        title: 'Connectivity Solutions',
+        description: 'Robust and reliable fibre and wireless connectivity solutions ensuring stable, high-speed internet for businesses, schools, and communities.',
     },
     {
         icon: Shield,
-        title: 'Cyber Security',
-        description: 'Protect your digital assets with our security solutions including firewalls, endpoint protection, and compliance.',
-    },
-    {
-        icon: Headphones,
-        title: '24/7 Technical Support',
-        description: 'Round-the-clock helpdesk and technical support to resolve issues quickly and minimize downtime.',
+        title: 'Cybersecurity Solutions',
+        description: 'Comprehensive network security, data protection, threat detection, and security audits to safeguard businesses against cyber threats.',
     },
     {
         icon: Settings,
-        title: 'IT Consulting',
-        description: 'Strategic technology guidance to align your IT infrastructure with business goals and industry best practices.',
+        title: 'IT Consulting & Solutions',
+        description: 'Strategic technology guidance and tailored IT infrastructure solutions to align your systems with business goals and best practices.',
+    },
+    {
+        icon: Cpu,
+        title: 'Managed IT Services',
+        description: 'End-to-end IT management with proactive monitoring, helpdesk support, and maintenance — so you can focus on your business.',
+    },
+    {
+        icon: Globe,
+        title: 'Cloud Solutions',
+        description: 'Scalable cloud infrastructure, migration services, and cloud management to modernise your operations and reduce costs.',
+    },
+    {
+        icon: Zap,
+        title: 'Digital Transformation',
+        description: 'Empowering businesses to embark on successful digital transformation journeys with innovative, cutting-edge solutions.',
+    },
+    {
+        icon: BarChart3,
+        title: 'Software Development',
+        description: 'Tailor-made applications and software solutions crafted by our skilled development team to solve your unique business challenges.',
+    },
+    {
+        icon: Users,
+        title: 'Design & UX Services',
+        description: 'Creative design and user experience services that deliver intuitive, visually compelling digital products for your customers.',
     },
 ];
 
@@ -311,7 +326,7 @@ export const ServicesSolutions: React.FC = () => {
                             <span className="text-[#81d742] text-xs font-bold uppercase tracking-[0.3em] mb-3 block">Platform Capabilities</span>
                             <h2 className="text-3xl lg:text-4xl font-bold text-[#00343C]">Built on World-Class Technology</h2>
                             <p className="mt-4 text-lg text-[#304040] max-w-2xl mx-auto">
-                                Every feature is engineered to deliver measurable academic outcomes.
+                                Every solution is engineered to deliver measurable business outcomes.
                             </p>
                         </div>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

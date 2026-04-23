@@ -122,10 +122,10 @@ export const ContactUs: React.FC = () => {
                             {
                                 icon: Phone,
                                 title: 'Call Us',
-                                primary: '+27 (0) 12 000 0000',
-                                secondary: '+27 (0) 82 000 0000',
+                                primary: '0800 014 995 (Toll Free)',
+                                secondary: 'WhatsApp: 061 444 8794',
                                 note: 'Mon – Fri, 08:00 – 17:00 SAST',
-                                href: 'tel:+27120000000',
+                                href: 'tel:0800014995',
                             },
                             {
                                 icon: MapPin,
@@ -266,8 +266,8 @@ export const ContactUs: React.FC = () => {
                                         </div>
                                         <div>
                                             <p className="text-white/50 text-xs uppercase tracking-wide mb-1">Phone</p>
-                                            <a href="tel:+27120000000" className="font-semibold hover:text-[#81d742] transition-colors block">+27 (0) 12 000 0000</a>
-                                            <a href="tel:+27820000000" className="text-white/70 text-sm hover:text-[#81d742] transition-colors block">+27 (0) 82 000 0000 (Mobile)</a>
+                                            <a href="tel:0800014995" className="font-semibold hover:text-[#81d742] transition-colors block">0800 014 995 (Toll Free)</a>
+                                            <a href="tel:0614448794" className="text-white/70 text-sm hover:text-[#81d742] transition-colors block">061 444 8794 (WhatsApp)</a>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-4">
