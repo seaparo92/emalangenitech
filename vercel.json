@@ -1,6 +1,7 @@
 {
-  "buildCommand": "cd \"Academy Classroom\" && npm run build",
-  "installCommand": "cd \"Academy Classroom\" && npm install",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
   "framework": "vite",
-  "outputDirectory": "Academy Classroom/dist"
+  "outputDirectory": "dist",
+  "root": "Academy Classroom"
 }
