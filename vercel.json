@@ -3,6 +3,7 @@
   "installCommand": "npm install",
   "framework": "vite",
   "outputDirectory": "dist",
+  "root": "Academy Classroom",
   "projectSettings": {
     "nodeVersion": "18.x"
   }
