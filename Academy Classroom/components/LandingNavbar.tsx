@@ -85,8 +85,8 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ showSocialStrip = 
                 </div>
 
                 {/* Mobile menu */}
-                {mobileMenuOpen && (
-                    <div className="md:hidden bg-white border-t border-gray-200 px-4 py-4 space-y-2">
+                <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="bg-white border-t border-gray-200 px-4 py-4 space-y-2">
                         <button onClick={() => { navigate('/home'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8] transition-colors">Home</button>
                         <button onClick={() => { navigate('/about-us'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8] transition-colors">About Us</button>
                         <button onClick={() => { navigate('/solutions'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8] transition-colors">Solutions</button>
@@ -102,7 +102,7 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ showSocialStrip = 
                             </button>
                         </div>
                     </div>
-                )}
+                </div>
             </nav>
         </>
     );
