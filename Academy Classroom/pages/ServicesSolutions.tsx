@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { LandingNavbar } from '../components/LandingNavbar';
 import { ContactFormModal } from '../components/ContactFormModal';
+import { WhatsAppFloat } from '../components/WhatsAppFloat';
 
 const SOLUTIONS = [
     {
@@ -439,6 +440,7 @@ export const ServicesSolutions: React.FC = () => {
                     </div>
                 </footer>
             </div>
+            <WhatsAppFloat />
         </>
     );
 };

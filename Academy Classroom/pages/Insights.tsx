@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { LandingNavbar } from '../components/LandingNavbar';
 import { ContactFormModal } from '../components/ContactFormModal';
+import { WhatsAppFloat } from '../components/WhatsAppFloat';
 
 type Article = {
     id: string;
@@ -347,6 +348,7 @@ export const Insights: React.FC = () => {
                     </div>
                 </footer>
             </div>
+            <WhatsAppFloat />
         </>
     );
 };

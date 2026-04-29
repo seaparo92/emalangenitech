@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { WhatsAppFloat } from '../components/WhatsAppFloat';
 
 export const SplashPage: React.FC = () => {
   const navigate = useNavigate();
@@ -95,6 +96,7 @@ export const SplashPage: React.FC = () => {
           </span>
         </button>
       </div>
+      <WhatsAppFloat />
     </div>
   );
 };

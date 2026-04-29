@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { WhatsAppFloat } from '../components/WhatsAppFloat';
 import { 
     Cloud, 
     Wifi, 
@@ -259,6 +260,7 @@ export const Solutions: React.FC = () => {
                     </div>
                 </div>
             </footer>
+            <WhatsAppFloat />
         </div>
     );
 };
