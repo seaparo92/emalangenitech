@@ -177,7 +177,7 @@ export const LandingPage: React.FC = () => {
                         <div className="group relative bg-[#f4f7f8] rounded-2xl p-8 border border-transparent hover:border-[#81d742] hover:bg-white hover:shadow-lg transition-all duration-300 overflow-hidden">
                             <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <img src="/images/Managed IT Services.jpg" alt="" className="w-full h-full object-cover" />
-                                <div className="absolute inset-0 bg-[#00343C]/80" />
+                                <div className="absolute inset-0 bg-[#00343C]/50" />
                             </div>
                             <div className="relative z-10">
                                 <div className="w-14 h-14 bg-[rgba(129,215,66,0.12)] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#81d742] transition-colors">
@@ -192,7 +192,7 @@ export const LandingPage: React.FC = () => {
                         <div className="group relative bg-[#f4f7f8] rounded-2xl p-8 border border-transparent hover:border-[#81d742] hover:bg-white hover:shadow-lg transition-all duration-300 overflow-hidden">
                             <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <img src="/images/ICT-Cloud-Solutions.jpg" alt="" className="w-full h-full object-cover" />
-                                <div className="absolute inset-0 bg-[#00343C]/80" />
+                                <div className="absolute inset-0 bg-[#00343C]/50" />
                             </div>
                             <div className="relative z-10">
                                 <div className="w-14 h-14 bg-[rgba(129,215,66,0.12)] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#81d742] transition-colors">
@@ -216,7 +216,7 @@ export const LandingPage: React.FC = () => {
                         <div className="group relative bg-[#f4f7f8] rounded-2xl p-8 border border-transparent hover:border-[#81d742] hover:bg-white hover:shadow-lg transition-all duration-300 overflow-hidden">
                             <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <img src="/images/Design and UX Services.jpg" alt="" className="w-full h-full object-cover" />
-                                <div className="absolute inset-0 bg-[#00343C]/80" />
+                                <div className="absolute inset-0 bg-[#00343C]/50" />
                             </div>
                             <div className="relative z-10">
                                 <div className="w-14 h-14 bg-[rgba(129,215,66,0.12)] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#81d742] transition-colors">
@@ -244,32 +244,50 @@ export const LandingPage: React.FC = () => {
             <div className="py-20 bg-[#00343C]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="bg-white/10 rounded-2xl p-8">
-                            <div className="w-14 h-14 bg-[#81d742]/20 rounded-xl flex items-center justify-center mb-6">
-                                <Target className="w-7 h-7 text-[#81d742]" />
+                        <div className="group relative bg-white/10 rounded-2xl p-8 overflow-hidden">
+                            <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <img src="/images/ABOUT US.png" alt="" className="w-full h-full object-cover" />
+                                <div className="absolute inset-0 bg-[#00343C]/50" />
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-4">Our Mission</h3>
-                            <p className="text-white/80 leading-relaxed">
-                                Fuelled by a deep passion for technology and a strong commitment to improving people's lives. We are driven by an unwavering desire to identify and explore new markets, opportunities, and innovative ways to implement our cutting-edge solutions. Emalangeni Technologies aims to be a leader in the connectivity and telephony space.
-                            </p>
+                            <div className="relative z-10">
+                                <div className="w-14 h-14 bg-[#81d742]/20 rounded-xl flex items-center justify-center mb-6">
+                                    <Target className="w-7 h-7 text-[#81d742]" />
+                                </div>
+                                <h3 className="text-xl font-bold text-white mb-4">Our Mission</h3>
+                                <p className="text-white/80 leading-relaxed">
+                                    Fuelled by a deep passion for technology and a strong commitment to improving people's lives. We are driven by an unwavering desire to identify and explore new markets, opportunities, and innovative ways to implement our cutting-edge solutions. Emalangeni Technologies aims to be a leader in the connectivity and telephony space.
+                                </p>
+                            </div>
                         </div>
-                        <div className="bg-white/10 rounded-2xl p-8">
-                            <div className="w-14 h-14 bg-[#81d742]/20 rounded-xl flex items-center justify-center mb-6">
-                                <Eye className="w-7 h-7 text-[#81d742]" />
+                        <div className="group relative bg-white/10 rounded-2xl p-8 overflow-hidden">
+                            <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <img src="/images/services emalangeni.png" alt="" className="w-full h-full object-cover" />
+                                <div className="absolute inset-0 bg-[#00343C]/50" />
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-4">Our Vision</h3>
-                            <p className="text-white/80 leading-relaxed">
-                                Emalangeni Technologies envisions becoming the leading and most innovative company in the connectivity and telephony space, setting new standards for excellence, and transforming the way people and businesses communicate and interact.
-                            </p>
+                            <div className="relative z-10">
+                                <div className="w-14 h-14 bg-[#81d742]/20 rounded-xl flex items-center justify-center mb-6">
+                                    <Eye className="w-7 h-7 text-[#81d742]" />
+                                </div>
+                                <h3 className="text-xl font-bold text-white mb-4">Our Vision</h3>
+                                <p className="text-white/80 leading-relaxed">
+                                    Emalangeni Technologies envisions becoming the leading and most innovative company in the connectivity and telephony space, setting new standards for excellence, and transforming the way people and businesses communicate and interact.
+                                </p>
+                            </div>
                         </div>
-                        <div className="bg-white/10 rounded-2xl p-8">
-                            <div className="w-14 h-14 bg-[#81d742]/20 rounded-xl flex items-center justify-center mb-6">
-                                <Shield className="w-7 h-7 text-[#81d742]" />
+                        <div className="group relative bg-white/10 rounded-2xl p-8 overflow-hidden">
+                            <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <img src="/images/IT-Infrastructure.jpg" alt="" className="w-full h-full object-cover" />
+                                <div className="absolute inset-0 bg-[#00343C]/50" />
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-4">Pioneering Change</h3>
-                            <p className="text-white/80 leading-relaxed">
-                                Emalangeni Technologies is at the forefront of pioneering change in the connectivity, telephony, and IT managed service space. Our commitment to innovation, customer-centricity, and excellence sets us apart as a trailblazer in the industry.
-                            </p>
+                            <div className="relative z-10">
+                                <div className="w-14 h-14 bg-[#81d742]/20 rounded-xl flex items-center justify-center mb-6">
+                                    <Shield className="w-7 h-7 text-[#81d742]" />
+                                </div>
+                                <h3 className="text-xl font-bold text-white mb-4">Pioneering Change</h3>
+                                <p className="text-white/80 leading-relaxed">
+                                    Emalangeni Technologies is at the forefront of pioneering change in the connectivity, telephony, and IT managed service space. Our commitment to innovation, customer-centricity, and excellence sets us apart as a trailblazer in the industry.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

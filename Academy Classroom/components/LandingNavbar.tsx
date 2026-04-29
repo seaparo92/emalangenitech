@@ -57,8 +57,8 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ showSocialStrip = 
                         {/* Desktop nav links */}
                         <div className="hidden md:flex items-center space-x-8">
                             <button onClick={() => navigate('/home')} className="text-[#00343C] hover:text-[#81d742] font-medium transition-colors">Home</button>
-                            <button onClick={() => navigate('/solutions')} className="text-[#00343C] hover:text-[#81d742] font-medium transition-colors">Solutions</button>
                             <button onClick={() => navigate('/about-us')} className="text-[#00343C] hover:text-[#81d742] font-medium transition-colors">About Us</button>
+                            <button onClick={() => navigate('/solutions')} className="text-[#00343C] hover:text-[#81d742] font-medium transition-colors">Solutions</button>
                             <button onClick={() => navigate('/services-solutions')} className="text-[#00343C] hover:text-[#81d742] font-medium transition-colors">Services</button>
                             <button onClick={() => navigate('/insights')} className="text-[#00343C] hover:text-[#81d742] font-medium transition-colors">Insights</button>
                             <button onClick={() => navigate('/register')} className="text-[#00343C] hover:text-[#81d742] font-medium transition-colors">Register</button>
@@ -88,8 +88,8 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ showSocialStrip = 
                 {mobileMenuOpen && (
                     <div className="md:hidden bg-white border-t border-gray-200 px-4 py-4 space-y-2">
                         <button onClick={() => { navigate('/home'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8] transition-colors">Home</button>
-                        <button onClick={() => { navigate('/solutions'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8] transition-colors">Solutions</button>
                         <button onClick={() => { navigate('/about-us'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8] transition-colors">About Us</button>
+                        <button onClick={() => { navigate('/solutions'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8] transition-colors">Solutions</button>
                         <button onClick={() => { navigate('/services-solutions'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8] transition-colors">Services</button>
                         <button onClick={() => { navigate('/insights'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8] transition-colors">Insights</button>
                         <button onClick={() => { navigate('/register'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8] transition-colors">Register</button>
