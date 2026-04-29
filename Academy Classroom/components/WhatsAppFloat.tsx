@@ -1,6 +1,6 @@
 import React from 'react';
 
-const WHATSAPP_NUMBER = '2777370236';
+const WHATSAPP_NUMBER = '27817370236';
 
 export const WhatsAppFloat: React.FC = () => {
     const handleClick = () => {
