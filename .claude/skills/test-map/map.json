@@ -1,0 +1,288 @@
+{
+  "generated": "2026-01-29",
+  "projectRoot": "c:\\Users\\USER-PC\\Desktop\\P2W",
+  "summary": {
+    "backendTestProjects": 1,
+    "backendTestFiles": 2,
+    "frontendTestFiles": 3,
+    "backendSourceFiles": 1204,
+    "frontendSourceFiles": 2115,
+    "testCoverage": "Minimal - limited test suite for both frontend and backend"
+  },
+  "testFrameworks": {
+    "backend": {
+      "framework": "MSTest",
+      "testFrameworkVersion": "3.6.4",
+      "runCommand": "dotnet test \"c:\\Users\\USER-PC\\Desktop\\P2W\\Speccon_TAP_Ext\\src-tap\\Services\\Speccon.Tap.Services.Test\\Speccon.Tap.Services.Test.csproj\"",
+      "runFilteredCommand": "dotnet test \"c:\\Users\\USER-PC\\Desktop\\P2W\\Speccon_TAP_Ext\\src-tap\\Services\\Speccon.Tap.Services.Test\\Speccon.Tap.Services.Test.csproj\" --filter \"{TestClassName}\"",
+      "timeout": 120000,
+      "testProjectPath": "Speccon_TAP_Ext\\src-tap\\Services\\Speccon.Tap.Services.Test",
+      "testProjectFile": "Speccon.Tap.Services.Test.csproj",
+      "mockingFramework": "Moq 4.20.72",
+      "sdkVersion": "net8.0"
+    },
+    "frontend": {
+      "framework": "Jest",
+      "runCommand": "npm test -- --watchAll=false",
+      "runFilteredCommand": "npm test -- --testPathPattern={pattern} --watchAll=false",
+      "testingLibrary": "@testing-library/react 16.3.0",
+      "testingLibraryDom": "@testing-library/jest-dom 5.17.0",
+      "enzymeVersion": "3.11.0",
+      "timeout": 120000,
+      "projectPath": "Speccon_TAP_Ext_React\\Speccon.Tap.Web"
+    }
+  },
+  "featureToTests": {
+    "Dashboard": {
+      "backend": [],
+      "frontend": [
+        {
+          "testFile": "src\\App.test.tsx",
+          "testPath": "c:\\Users\\USER-PC\\Desktop\\P2W\\Speccon_TAP_Ext_React\\Speccon.Tap.Web\\src\\App.test.tsx",
+          "covers": [
+            "src\\App.tsx"
+          ],
+          "testCount": 2,
+          "testNames": [
+            "renders learn react link",
+            "renders the app root element"
+          ]
+        },
+        {
+          "testFile": "src\\modules\\features\\Dashboard\\containers\\DashboardContainer\\DashboardContainer.test.tsx",
+          "testPath": "c:\\Users\\USER-PC\\Desktop\\P2W\\Speccon_TAP_Ext_React\\Speccon.Tap.Web\\src\\modules\\features\\Dashboard\\containers\\DashboardContainer\\DashboardContainer.test.tsx",
+          "covers": [
+            "src\\modules\\features\\Dashboard\\containers\\DashboardContainer\\DashboardContainer.tsx"
+          ],
+          "testCount": 1,
+          "testNames": [
+            "matches snapshot"
+          ]
+        },
+        {
+          "testFile": "src\\modules\\features\\Dashboard\\pages\\DashboardPage\\DashboardPage.test.tsx",
+          "testPath": "c:\\Users\\USER-PC\\Desktop\\P2W\\Speccon_TAP_Ext_React\\Speccon.Tap.Web\\src\\modules\\features\\Dashboard\\pages\\DashboardPage\\DashboardPage.test.tsx",
+          "covers": [
+            "src\\modules\\features\\Dashboard\\pages\\DashboardPage\\DashboardPage.tsx"
+          ],
+          "testCount": 1,
+          "testNames": [
+            "matches snapshot"
+          ]
+        }
+      ]
+    },
+    "Academy": {
+      "backend": [
+        {
+          "testFile": "AcademyServices\\AcademyAnalyticsService.cs",
+          "testPath": "c:\\Users\\USER-PC\\Desktop\\P2W\\Speccon_TAP_Ext\\src-tap\\Services\\Speccon.Tap.Services.Test\\AcademyServices\\AcademyAnalyticsService.cs",
+          "covers": [
+            "Services\\Speccon.Tap.Services\\Services\\Academy\\AcademyAnalyticsService.cs"
+          ],
+          "testCount": 3,
+          "testNames": [
+            "GetAllSubjectAnalytics_SubjectKeyEmpty_ReturnsSubjectAnalytics",
+            "GetAllSubjectAnalytics_SubjectKeyNotEmpty_ReturnsModuleAnalytics",
+            "GetAllSubjectAnalytics_RepositoryThrows_LogsErrorAndThrows"
+          ],
+          "testClass": "AcademyAnalyticsServiceTest"
+        }
+      ],
+      "frontend": []
+    },
+    "PassportToWork": {
+      "backend": [],
+      "frontend": []
+    }
+  },
+  "sourceToTests": {
+    "Services\\Speccon.Tap.Services\\Services\\Academy\\AcademyAnalyticsService.cs": [
+      "Speccon_TAP_Ext\\src-tap\\Services\\Speccon.Tap.Services.Test\\AcademyServices\\AcademyAnalyticsService.cs"
+    ],
+    "src\\modules\\features\\Dashboard\\containers\\DashboardContainer\\DashboardContainer.tsx": [
+      "src\\modules\\features\\Dashboard\\containers\\DashboardContainer\\DashboardContainer.test.tsx"
+    ],
+    "src\\modules\\features\\Dashboard\\pages\\DashboardPage\\DashboardPage.tsx": [
+      "src\\modules\\features\\Dashboard\\pages\\DashboardPage\\DashboardPage.test.tsx"
+    ],
+    "src\\App.tsx": [
+      "src\\App.test.tsx"
+    ]
+  },
+  "unterstedFeatures": {
+    "backend": [
+      {
+        "feature": "Academy",
+        "unterstedServices": [
+          "AcademyExaminationService.cs",
+          "AcademyMasterService.cs",
+          "AssessmentPromptMasterService.cs",
+          "AssessmentQuestionAnswerService.cs",
+          "AssessmentService.cs",
+          "GenAiRequestQueueService.cs",
+          "GenAIService.cs"
+        ]
+      },
+      {
+        "feature": "PassportToWork",
+        "unterstedServices": [
+          "ApplicationService.cs",
+          "EmployEquityService.cs",
+          "HeadhuntingService.cs",
+          "InterviewService.cs",
+          "JobService.cs",
+          "OfferTemplateService.cs",
+          "SystemSettingsService.cs"
+        ]
+      }
+    ],
+    "frontend": [
+      {
+        "feature": "Academy",
+        "unterstedComponents": "Multiple Academy containers and pages (20+ components)"
+      },
+      {
+        "feature": "PassportToWork",
+        "unterstedComponents": "All PassportToWork components and containers (30+ components)"
+      },
+      {
+        "feature": "AboutUs",
+        "unterstedComponents": "AboutUsContainer, AboutUsPage, AboutUs"
+      },
+      {
+        "feature": "ContactUs",
+        "unterstedComponents": "All ContactUs components"
+      },
+      {
+        "feature": "MyProfile",
+        "unterstedComponents": "All MyProfile components and containers"
+      },
+      {
+        "feature": "MyShoppingCart",
+        "unterstedComponents": "All MyShoppingCart components"
+      },
+      {
+        "feature": "BillingDetails",
+        "unterstedComponents": "All BillingDetails components"
+      }
+    ]
+  },
+  "detailedMetrics": {
+    "backend": {
+      "totalServiceFiles": 1204,
+      "testedServiceFiles": 1,
+      "testCoveragePercentage": 0.08,
+      "testProjects": [
+        {
+          "projectName": "Speccon.Tap.Services.Test",
+          "projectPath": "Speccon_TAP_Ext\\src-tap\\Services\\Speccon.Tap.Services.Test",
+          "framework": "MSTest",
+          "dependencies": [
+            "Microsoft.NET.Test.Sdk 17.12.0",
+            "MSTest 3.6.4",
+            "Moq 4.20.72"
+          ],
+          "references": [
+            "Speccon.Tap.Services"
+          ]
+        }
+      ],
+      "features": {
+        "Academy": {
+          "totalServices": 10,
+          "testedServices": 1,
+          "unterstedServices": 9
+        },
+        "PassportToWork": {
+          "totalServices": 7,
+          "testedServices": 0,
+          "unterstedServices": 7
+        },
+        "Other": {
+          "totalServices": 300,
+          "testedServices": 0,
+          "unterstedServices": 300
+        }
+      }
+    },
+    "frontend": {
+      "totalSourceFiles": 2115,
+      "testedSourceFiles": 4,
+      "testCoveragePercentage": 0.19,
+      "testFiles": [
+        {
+          "filePath": "src\\App.test.tsx",
+          "framework": "Jest",
+          "testingLibrary": "@testing-library/react",
+          "testCount": 2
+        },
+        {
+          "filePath": "src\\modules\\features\\Dashboard\\containers\\DashboardContainer\\DashboardContainer.test.tsx",
+          "framework": "Jest",
+          "testingLibrary": "enzyme",
+          "testCount": 1
+        },
+        {
+          "filePath": "src\\modules\\features\\Dashboard\\pages\\DashboardPage\\DashboardPage.test.tsx",
+          "framework": "Jest",
+          "testingLibrary": "enzyme",
+          "testCount": 1
+        }
+      ],
+      "features": {
+        "Dashboard": {
+          "totalComponents": 10,
+          "testedComponents": 2,
+          "unterstedComponents": 8
+        },
+        "Academy": {
+          "totalComponents": 50,
+          "testedComponents": 0,
+          "unterstedComponents": 50
+        },
+        "PassportToWork": {
+          "totalComponents": 60,
+          "testedComponents": 0,
+          "unterstedComponents": 60
+        },
+        "Other": {
+          "totalComponents": 1995,
+          "testedComponents": 0,
+          "unterstedComponents": 1995
+        }
+      }
+    }
+  },
+  "recommendations": {
+    "immediate": [
+      "Expand MSTest test suite for PassportToWork services (7 services untested)",
+      "Add more Academy service tests beyond AcademyAnalyticsService",
+      "Create integration tests for API endpoints",
+      "Add e2e tests using Playwright (already available as devDependency)"
+    ],
+    "shortTerm": [
+      "Increase Frontend test coverage for Academy feature components",
+      "Add tests for PassportToWork feature (critical business logic)",
+      "Create reusable test utilities and fixtures",
+      "Set up code coverage reporting in CI/CD"
+    ],
+    "longTerm": [
+      "Aim for 80%+ code coverage across both frontend and backend",
+      "Implement test-driven development (TDD) practices",
+      "Create testing guidelines and best practices documentation",
+      "Establish test naming conventions and patterns"
+    ]
+  },
+  "notes": {
+    "testFilePattern": {
+      "frontend": "*.test.tsx, *.test.ts, *.spec.tsx, *.spec.ts",
+      "backend": "*Test*.cs or *Tests*.cs in .Test project"
+    },
+    "testingApproach": {
+      "frontend": "Snapshot testing (enzyme) and integration testing (@testing-library/react)",
+      "backend": "Unit testing with Moq for dependency mocking"
+    },
+    "parallelization": "MSTest parallelization enabled at MethodLevel (MSTestSettings.cs)"
+  }
+}

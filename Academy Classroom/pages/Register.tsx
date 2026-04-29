@@ -93,8 +93,8 @@ export const Register: React.FC = () => {
             {/* ── Hero ─────────────────────────────────────── */}
             <section className="relative bg-[#00343C] overflow-hidden">
                 <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#81d742]/10 rounded-full blur-3xl" />
-                    <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#81d742]/5 rounded-full blur-3xl" />
+                    <img src="/images/Contact us Emalangeni.png" alt="" className="w-full h-full object-cover opacity-60" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#00343C]/95 via-[#00343C]/70 to-transparent" />
                 </div>
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
                     <button

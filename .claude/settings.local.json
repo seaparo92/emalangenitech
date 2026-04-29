@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Allow",
+      "Bash",
+      "Edit",
+      "Write",
+      "Read",
+      "Glob",
+      "Grep",
+      "Skill",
+      "WebFetch(domain:emalangenitech.co.za)",
+      "WebFetch(domain:www.ptsportsuite.com)",
+      "WebFetch(domain:www.emalangenitech.co.za)",
+      "WebFetch(domain:webcache.googleusercontent.com)"
+    ]
+  },
+  "always_include_project_map": true
+}

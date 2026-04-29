@@ -1,0 +1,41 @@
+Database Change Request: Create OfferTemplate table
+Date: 2026-01-29
+Affected Table: dbo.OfferTemplate (new table)
+Reason: Support offer letter template management for Passport to Work recruitment workflow.
+Recruiters can manage reusable HTML templates with placeholders for sending job offers to candidates.
+Global templates (IsGlobalTemplate = 1) are visible to all tenants but read-only.
+Tenant-created templates (IsGlobalTemplate = 0) are only visible to that tenant and fully editable.
+
+-- VERIFY SCRIPT (check if table already exists)
+SELECT TABLE_NAME
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_NAME = 'OfferTemplate';
+
+-- APPLY SCRIPT
+CREATE TABLE dbo.OfferTemplate (
+    OfferTemplateId INT IDENTITY(1,1) NOT NULL,
+    OfferTemplateKey UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+    CreatedDate DATETIME NOT NULL DEFAULT GETDATE(),
+    CreatedBy INT NOT NULL,
+    UpdatedDate DATETIME NOT NULL DEFAULT GETDATE(),
+    UpdatedBy INT NOT NULL,
+    RecordStatusId INT NOT NULL DEFAULT 1,
+    ClientId INT NOT NULL,
+    TemplateName NVARCHAR(500) NOT NULL,
+    TemplateContent NVARCHAR(MAX) NOT NULL,
+    IsDefault BIT NOT NULL DEFAULT 0,
+    IsGlobalTemplate BIT NOT NULL DEFAULT 0,
+    CONSTRAINT PK_OfferTemplate PRIMARY KEY CLUSTERED (OfferTemplateId),
+    CONSTRAINT UQ_OfferTemplate_Key UNIQUE (OfferTemplateKey),
+    CONSTRAINT FK_OfferTemplate_Client FOREIGN KEY (ClientId) REFERENCES dbo.Client(ClientId)
+);
+
+CREATE NONCLUSTERED INDEX IX_OfferTemplate_ClientId ON dbo.OfferTemplate(ClientId) WHERE RecordStatusId = 1;
+CREATE NONCLUSTERED INDEX IX_OfferTemplate_Key ON dbo.OfferTemplate(OfferTemplateKey) WHERE RecordStatusId = 1;
+CREATE NONCLUSTERED INDEX IX_OfferTemplate_Global ON dbo.OfferTemplate(IsGlobalTemplate) WHERE RecordStatusId = 1 AND IsGlobalTemplate = 1;
+
+PRINT 'Created OfferTemplate table';
+
+-- ROLLBACK SCRIPT
+DROP TABLE IF EXISTS dbo.OfferTemplate;
+PRINT 'Dropped OfferTemplate table';

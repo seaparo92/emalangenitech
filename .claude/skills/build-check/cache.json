@@ -1,0 +1,77 @@
+{
+  "generated": "2026-01-29",
+  "projects": [
+    {
+      "name": "Speccon.Tap.Api",
+      "root": "Speccon_TAP_Ext/src-tap",
+      "layer": "backend",
+      "buildCommand": "dotnet build Speccon_TAP_Ext/src-tap/Presentation/Speccon.Tap.Api/Speccon.Tap.Api.csproj",
+      "quickCheckCommand": "dotnet build Speccon_TAP_Ext/src-tap/Presentation/Speccon.Tap.Api/Speccon.Tap.Api.csproj --no-restore",
+      "workingDirectory": "Speccon_TAP_Ext/src-tap",
+      "timeout": 120000,
+      "framework": "net8.0",
+      "description": "Main API project for P2W backend services"
+    },
+    {
+      "name": "Speccon_Tap Solution",
+      "root": "Speccon_TAP_Ext",
+      "layer": "backend",
+      "buildCommand": "dotnet build Speccon_TAP_Ext/Speccon_Tap.sln",
+      "quickCheckCommand": "dotnet build Speccon_TAP_Ext/Speccon_Tap.sln --no-restore",
+      "workingDirectory": "Speccon_TAP_Ext",
+      "timeout": 300000,
+      "description": "Full solution build (includes all projects: Api, Domain, Services, Data, Reporting, GenAI, Scheduler, WhatsApp)"
+    },
+    {
+      "name": "Speccon.Tap.Web",
+      "root": "Speccon_TAP_Ext_React/Speccon.Tap.Web",
+      "layer": "frontend",
+      "buildCommand": "npm run build",
+      "typeCheckCommand": "npx tsc --noEmit",
+      "lintCommand": "npm run prettier --check",
+      "testCommand": "npm run test:ci",
+      "workingDirectory": "Speccon_TAP_Ext_React/Speccon.Tap.Web",
+      "timeout": 180000,
+      "packageManager": "npm",
+      "description": "React frontend application with TypeScript, Ant Design, Redux, and React Query",
+      "scripts": {
+        "start": "env-cmd -f .env react-scripts start",
+        "start:prod": "env-cmd -f .env.prod react-scripts start",
+        "start:dev": "env-cmd -f .env.development react-scripts start",
+        "start:staging": "env-cmd -f .env.staging react-scripts start",
+        "build": "react-scripts build",
+        "build:prod": "node updateVersion.js && env-cmd -f .env.prod react-scripts build",
+        "build:staging": "node updateVersion.js && env-cmd -f .env.staging react-scripts build",
+        "test": "react-scripts test",
+        "test:coverage": "react-scripts test --coverage --watchAll=false",
+        "test:ci": "react-scripts test --ci --coverage",
+        "prettier": "prettier --check '**/**/*.{js,jsx,ts,tsx,css,json}'",
+        "prettier:fix": "prettier --write '**/**/*.{js,jsx,ts,tsx,css,json}'"
+      }
+    }
+  ],
+  "quickChecks": {
+    "backend": "dotnet build Speccon_TAP_Ext/src-tap/Presentation/Speccon.Tap.Api/Speccon.Tap.Api.csproj --no-restore",
+    "frontend": "npx tsc --noEmit"
+  },
+  "packageManagers": {
+    "backend": "dotnet (net8.0)",
+    "frontend": "npm (package-lock.json)"
+  },
+  "notes": {
+    "backend": [
+      "Solution uses DisableParallelization=true for more stable builds",
+      "Main projects: Api, Services, Services.Test, Domain, Data, Reporting, GenAI, Scheduler, WhatsApp",
+      "Target framework: .NET 8.0"
+    ],
+    "frontend": [
+      "Uses create-react-app (react-scripts) with TypeScript",
+      "Node.js requirement: >= 20.0.0",
+      "Package manager: npm with package-lock.json",
+      "Build config: env-cmd for environment management",
+      "Linting: ESLint, Prettier",
+      "Testing: Jest via react-scripts",
+      "DevDependencies include Playwright for E2E testing"
+    ]
+  }
+}

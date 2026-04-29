@@ -1,0 +1,23 @@
+Database Change Request: Add IsGlobalTemplate column to OfferTemplate table
+Date: 2026-01-29
+Affected Table: dbo.OfferTemplate
+Reason: Support distinguishing global (system-level) templates from tenant-created templates.
+Global templates (IsGlobalTemplate = 1) are visible to all tenants but read-only.
+Tenant-created templates (IsGlobalTemplate = 0) are only visible to that tenant and fully editable.
+
+-- VERIFY SCRIPT (check if column already exists)
+SELECT COLUMN_NAME
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'OfferTemplate' AND COLUMN_NAME = 'IsGlobalTemplate';
+
+-- APPLY SCRIPT
+ALTER TABLE dbo.OfferTemplate ADD IsGlobalTemplate BIT NOT NULL DEFAULT 0;
+
+CREATE NONCLUSTERED INDEX IX_OfferTemplate_Global ON dbo.OfferTemplate(IsGlobalTemplate) WHERE RecordStatusId = 1 AND IsGlobalTemplate = 1;
+
+PRINT 'Added IsGlobalTemplate column to OfferTemplate table';
+
+-- ROLLBACK SCRIPT
+DROP INDEX IF EXISTS IX_OfferTemplate_Global ON dbo.OfferTemplate;
+ALTER TABLE dbo.OfferTemplate DROP COLUMN IsGlobalTemplate;
+PRINT 'Removed IsGlobalTemplate column from OfferTemplate table';

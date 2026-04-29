@@ -50,13 +50,14 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ showSocialStrip = 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-20">
                         {/* Logo */}
-                        <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
+                        <div className="flex items-center cursor-pointer" onClick={() => navigate('/home')}>
                             <img src="/images/EMALANGENI TECHNOLOGIES_ORIGINAL VERSION.png" alt="Emalangeni Tech" className="h-16 w-auto object-contain" />
                         </div>
 
                         {/* Desktop nav links */}
                         <div className="hidden md:flex items-center space-x-8">
-                            <button onClick={() => navigate('/')} className="text-[#00343C] hover:text-[#81d742] font-medium transition-colors">Home</button>
+                            <button onClick={() => navigate('/home')} className="text-[#00343C] hover:text-[#81d742] font-medium transition-colors">Home</button>
+                            <button onClick={() => navigate('/solutions')} className="text-[#00343C] hover:text-[#81d742] font-medium transition-colors">Solutions</button>
                             <button onClick={() => navigate('/about-us')} className="text-[#00343C] hover:text-[#81d742] font-medium transition-colors">About Us</button>
                             <button onClick={() => navigate('/services-solutions')} className="text-[#00343C] hover:text-[#81d742] font-medium transition-colors">Services</button>
                             <button onClick={() => navigate('/insights')} className="text-[#00343C] hover:text-[#81d742] font-medium transition-colors">Insights</button>
@@ -86,7 +87,8 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ showSocialStrip = 
                 {/* Mobile menu */}
                 {mobileMenuOpen && (
                     <div className="md:hidden bg-white border-t border-gray-200 px-4 py-4 space-y-2">
-                        <button onClick={() => { navigate('/'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8] transition-colors">Home</button>
+                        <button onClick={() => { navigate('/home'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8] transition-colors">Home</button>
+                        <button onClick={() => { navigate('/solutions'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8] transition-colors">Solutions</button>
                         <button onClick={() => { navigate('/about-us'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8] transition-colors">About Us</button>
                         <button onClick={() => { navigate('/services-solutions'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8] transition-colors">Services</button>
                         <button onClick={() => { navigate('/insights'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-3 rounded-lg text-[#00343C] font-medium hover:bg-[#f4f7f8] transition-colors">Insights</button>

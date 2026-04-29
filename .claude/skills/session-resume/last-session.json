@@ -1,0 +1,41 @@
+{
+  "savedAt": "2026-01-29 current",
+  "lastTask": {
+    "description": "Building speed optimization skills (session-resume, task-journal, file-index, function-level caches)",
+    "status": "in-progress",
+    "blockedBy": null
+  },
+  "activeFeature": "PassportToWork",
+  "activeLayer": "full-stack",
+  "recentFiles": {
+    "modified": [
+      "Speccon_TAP_Ext/src-tap/Domain/Speccon.Tap.Domain/Entities/PassportToWork/OfferTemplate.cs",
+      "Speccon_TAP_Ext/src-tap/Services/Speccon.Tap.Services/Services/PassportToWork/OfferTemplateService.cs",
+      "Speccon_TAP_Ext/src-tap/Presentation/Speccon.Tap.Api/Controllers/OfferTemplatesController.cs",
+      "Speccon_TAP_Ext/src-tap/Services/Speccon.Tap.Services/DependancyInjectionExtentions.cs",
+      "Speccon_TAP_Ext/src-tap/Infrastructure/Data/Speccon.Tap.Data/AppContext/AppDbContext.cs",
+      "Speccon_TAP_Ext_React/Speccon.Tap.Web/src/modules/features/PassportToWork/containers/OfferTemplatesTabContainer/OfferTemplatesTabContainer.tsx",
+      ".claude/skills/backend-patterns/SKILL.md",
+      ".claude/skills/frontend-patterns/SKILL.md",
+      ".claude/skills/architecture-scanner/SKILL.md"
+    ],
+    "read": [
+      "Speccon_TAP_Ext_React/Speccon.Tap.Web/src/modules/features/PassportToWork/containers/RecruiterPortalContainer/RecruiterPortalContainer.tsx",
+      "Speccon_TAP_Ext_React/Speccon.Tap.Web/src/modules/features/PassportToWork/modules/Recruiter/presentation/RecruiterDashboard/RecruiterDashboard.tsx"
+    ]
+  },
+  "openIssues": [
+    {
+      "description": "Reject button on recruiter pending tab may not hit API - added console.log debugging, needs browser console check",
+      "file": "Speccon_TAP_Ext_React/Speccon.Tap.Web/src/modules/features/PassportToWork/containers/RecruiterPortalContainer/RecruiterPortalContainer.tsx",
+      "severity": "medium"
+    },
+    {
+      "description": "Backend RejectJob sets status to 'Incomplete' instead of 'Rejected' - status mismatch not yet resolved",
+      "file": "Speccon_TAP_Ext/src-tap/Services/Speccon.Tap.Services/Services/PassportToWork/JobService.cs",
+      "severity": "medium"
+    }
+  ],
+  "workingBranch": "unknown - check before committing",
+  "notes": "Created full CRUD backend for OfferTemplates (entity, DTOs, service, controller, DI, DbContext, DB change script). Database table not yet created by DBA. Skills system built: backend-patterns, frontend-patterns, architecture-scanner, session-resume, task-journal, file-index."
+}

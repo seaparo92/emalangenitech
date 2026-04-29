@@ -1,0 +1,146 @@
+{
+  "generated": "2026-01-29",
+  "project": "Speccon TAP",
+  "layers": {
+    "frontend": {
+      "root": "Speccon_TAP_Ext_React/Speccon.Tap.Web/src",
+      "framework": "react",
+      "language": "typescript",
+      "uiLibrary": "antd",
+      "queryLibrary": "@tanstack/react-query",
+      "patternsSkill": ".claude/skills/frontend-patterns/",
+      "apiConfigFile": "Speccon_TAP_Ext_React/Speccon.Tap.Web/src/services/",
+      "keyDirectories": {
+        "features": "src/modules/features/",
+        "auth": "src/modules/auth/",
+        "sharedServices": "src/services/"
+      }
+    },
+    "backend": {
+      "root": "Speccon_TAP_Ext/src-tap",
+      "framework": ".net",
+      "language": "csharp",
+      "patternsSkill": ".claude/skills/backend-patterns/",
+      "controllersPath": "Speccon_TAP_Ext/src-tap/Presentation/Speccon.Tap.Api/Controllers",
+      "servicesPath": "Speccon_TAP_Ext/src-tap/Services/Speccon.Tap.Services/Services",
+      "interfacesPath": "Speccon_TAP_Ext/src-tap/Services/Speccon.Tap.Services/Interfaces/Services",
+      "entitiesPath": "Speccon_TAP_Ext/src-tap/Domain/Speccon.Tap.Domain/Entities",
+      "dtosPath": "Speccon_TAP_Ext/src-tap/Services/Speccon.Tap.Services/ServiceDtos"
+    }
+  },
+  "filePatterns": {
+    "*.tsx": "frontend",
+    "*.ts": "frontend",
+    "*.jsx": "frontend",
+    "*.css": "frontend",
+    "*.scss": "frontend",
+    "*.cs": "backend",
+    "*.csproj": "backend",
+    "*.sln": "backend"
+  },
+  "featureMapping": {
+    "PassportToWork": {
+      "feRoot": "src/modules/features/PassportToWork",
+      "feServices": [
+        "passportToWork.service.ts",
+        "offerTemplates.service.ts",
+        "systemSettings.service.ts"
+      ],
+      "beControllers": [
+        "JobsController.cs",
+        "InterviewsController.cs",
+        "OfferTemplatesController.cs",
+        "ApplicationsController.cs",
+        "HeadhuntingController.cs",
+        "SystemSettingsController.cs"
+      ]
+    },
+    "Academy": {
+      "feRoot": "src/modules/features/Academy",
+      "feServices": ["questionReport.service.ts"],
+      "beControllers": [
+        "AcademyMasterController.cs",
+        "AcademyAnalyticsController.cs",
+        "AcademyExaminationController.cs",
+        "CourseController.cs",
+        "CourseManagementController.cs",
+        "LessonManagementController.cs",
+        "ExamManagementController.cs",
+        "QuizManagementController.cs",
+        "UnitManagementController.cs"
+      ]
+    },
+    "EmploymentEquity": {
+      "feRoot": "src/modules/features/EmploymentEquity",
+      "feServices": [
+        "employmentEquity.service.ts",
+        "employmentEquityPlan.service.ts",
+        "type.service.ts",
+        "plan.service.ts"
+      ],
+      "beControllers": [
+        "EntityController.cs",
+        "EntityCompanyProfileController.cs",
+        "EntityPlanController.cs",
+        "EntitySectionController.cs",
+        "EntityWorkForceAnalysisController.cs",
+        "EntityEquityCommitteeMeetingController.cs",
+        "EntityEquityCommitteeMemberController.cs",
+        "EntityEquityManagerController.cs",
+        "EquityEntityConfigurationController.cs",
+        "EquityWorkforceProfileController.cs",
+        "EmploymentEquityReportingController.cs"
+      ]
+    },
+    "MyShoppingCart": {
+      "feRoot": "src/modules/features/MyShoppingCart",
+      "feServices": ["myShoppingCart.service.ts"],
+      "beControllers": ["ShoppingController.cs", "PaymentController.cs", "PayFastController.cs"]
+    }
+  },
+  "apiRoutes": {
+    "api/jobs": "JobsController.cs",
+    "api/interviews": "InterviewsController.cs",
+    "api/offer-templates": "OfferTemplatesController.cs",
+    "api/applications": "ApplicationsController.cs",
+    "api/headhunting": "HeadhuntingController.cs",
+    "api/system-settings": "SystemSettingsController.cs",
+    "api/Course": "CourseController.cs",
+    "api/Dashboard": "DashboardController.cs",
+    "api/Teams": "TeamsController.cs",
+    "api/TeamMember": "TeamMemberController.cs",
+    "api/TeamLeaderboard": "TeamLeaderboardController.cs",
+    "api/User": "UserController.cs",
+    "api/Payment": "PaymentController.cs",
+    "api/Shopping": "ShoppingController.cs",
+    "api/Client": "ClientController.cs",
+    "api/CompanyProfile": "CompanyProfileController.cs",
+    "api/CompanyThemeSettings": "CompanyThemeSettingController.cs",
+    "api/Document": "DocumentController.cs",
+    "api/Broadcast": "BroadCastController.cs",
+    "api/WhatsAppMessage": "WhatsAppUserMessageController.cs",
+    "api/WorkExperience": "WorkExperienceController.cs",
+    "api/WorkforceProfile": "WorkforceProfileController.cs",
+    "api/Skill": "SkillController.cs",
+    "api/Showcase": "ShowCaseController.cs",
+    "api/Reference": "ReferenceController.cs",
+    "api/Province": "ProvinceController.cs",
+    "api/Highschool": "HighSchoolController.cs",
+    "api/Tertiary": "TertiaryController.cs",
+    "api/Game": "GameController.cs",
+    "api/EquityEntity": "EntityController.cs",
+    "api/EquityEntityCompany": "EntityCompanyProfileController.cs",
+    "api/EntityPlan": "EntityPlanController.cs",
+    "api/EntitySection": "EntitySectionController.cs",
+    "api/EntityWorkForceAnalysis": "EntityWorkForceAnalysisController.cs",
+    "api/EquityCommitteeMeeting": "EntityEquityCommitteeMeetingController.cs",
+    "api/EquityCommitteeMember": "EntityEquityCommitteeMemberController.cs",
+    "api/EquityManager": "EntityEquityManagerController.cs",
+    "api/EquityEntityConfiguration": "EquityEntityConfigurationController.cs",
+    "api/EquityWorkforceProfile": "EquityWorkforceProfileController.cs",
+    "api/EmployEquity": "EmploymentEquityReportingController.cs",
+    "api/CertificateSignature": "CertificateSignatureController.cs",
+    "api/SystemConfiguration": "SystemConfigurationController.cs",
+    "api/v1/access-keys": "AccessKeysController.cs"
+  }
+}

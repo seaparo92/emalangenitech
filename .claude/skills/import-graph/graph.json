@@ -1,0 +1,343 @@
+{
+  "generated": "2026-01-29",
+  "graph": {
+    "modules/features/PassportToWork/services/passportToWork.service": {
+      "importedBy": [
+        "modules/features/PassportToWork/containers/RecruiterPortalContainer/RecruiterPortalContainer.tsx",
+        "modules/features/PassportToWork/presentation/RecruiterDashboard/RecruiterDashboard.tsx",
+        "modules/features/PassportToWork/modules/Manager/presentation/ManagerJobRequest/ManagerJobRequest.tsx",
+        "modules/features/PassportToWork/presentation/ManagerPortalDashboard/ManagerPortalDashboard.tsx",
+        "modules/features/PassportToWork/containers/ManagerPortalContainer/ManagerPortalContainer.tsx",
+        "modules/features/PassportToWork/containers/JobsTabContainer/JobsTabContainer.tsx",
+        "modules/features/PassportToWork/modules/Jobs/presentation/JobInterviewResults/JobInterviewResults.tsx",
+        "modules/features/PassportToWork/modules/Recruiter/presentation/ManageJob/ManageJob.tsx",
+        "modules/features/PassportToWork/modules/Jobs/presentation/EditQuestionsModal/EditQuestionsModal.tsx",
+        "modules/features/PassportToWork/modules/Jobs/containers/JobInterviewResultsContainer/JobInterviewResultsContainer.tsx",
+        "modules/features/PassportToWork/modules/Headhunting/presentation/HeadhuntingDashboard/HeadhuntingDashboard.tsx",
+        "modules/features/PassportToWork/pages/DebugDashboard/DebugDashboard.tsx",
+        "modules/features/PassportToWork/modules/Jobs/containers/JobApplicantsContainer/JobApplicantsContainer.tsx",
+        "modules/features/PassportToWork/modules/Jobs/containers/JobKanbanContainer/JobKanbanContainer.tsx",
+        "modules/features/PassportToWork/modules/Jobs/containers/JobWizardContainer/JobWizardContainer.tsx",
+        "modules/features/PassportToWork/containers/JobPortalContainer/JobPortalContainer.tsx",
+        "modules/features/PassportToWork/modules/Interviews/containers/InterviewWizardContainer/InterviewWizardContainer.tsx",
+        "modules/features/PassportToWork/modules/Recruiter/containers/ManageJobContainer/ManageJobContainer.tsx",
+        "modules/features/PassportToWork/modules/Manager/containers/ManagerJobRequestContainer/ManagerJobRequestContainer.tsx",
+        "modules/features/PassportToWork/modules/Manager/containers/ManagerJobReviewContainer/ManagerJobReviewContainer.tsx",
+        "modules/features/PassportToWork/containers/SettingsTabContainer/SettingsTabContainer.tsx",
+        "modules/features/PassportToWork/modules/Manager/containers/ManagerDashboardContainer/ManagerDashboardContainer.tsx",
+        "modules/features/PassportToWork/modules/Interviews/containers/InterviewListContainer/InterviewListContainer.tsx",
+        "modules/features/PassportToWork/modules/Headhunting/containers/HeadhuntingDashboardContainer/HeadhuntingDashboardContainer.tsx",
+        "modules/features/PassportToWork/containers/ProvincesTabContainer/ProvincesTabContainer.tsx",
+        "modules/features/PassportToWork/containers/PassportDashboardContainer/PassportDashboardContainer.tsx",
+        "modules/features/PassportToWork/containers/JobPortalTabContainer/JobPortalTabContainer.tsx",
+        "modules/features/PassportToWork/containers/CitiesTabContainer/CitiesTabContainer.tsx",
+        "modules/features/PassportToWork/containers/BusinessUnitsTabContainer/BusinessUnitsTabContainer.tsx",
+        "modules/features/PassportToWork/containers/ApplicationsManagementContainer/ApplicationsManagementContainer.tsx",
+        "modules/features/PassportToWork/hooks/jobs.hooks.ts",
+        "modules/features/PassportToWork/hooks/jobRequests.hooks.ts",
+        "modules/features/PassportToWork/hooks/passportToWork.hook.ts",
+        "modules/features/PassportToWork/hooks/applications.hooks.ts",
+        "modules/features/PassportToWork/hooks/interviews.hooks.ts",
+        "modules/features/PassportToWork/hooks/systemSettings.hooks.ts",
+        "modules/features/PassportToWork/modules/Jobs/containers/JobApplicantsContainer/JobApplicantsContainer.tsx"
+      ],
+      "importCount": 38,
+      "description": "Central PassportToWork API service aggregating Job, Application, Interview, and System Settings operations"
+    },
+    "modules/core/models/enums/url.enums": {
+      "importedBy": [
+        "modules/features/PassportToWork/services/passportToWork.service.ts",
+        "modules/features/PassportToWork/services/offerTemplates.service.ts",
+        "modules/features/PassportToWork/services/systemSettings.service.ts",
+        "modules/core/services/Interceptors.tsx",
+        "modules/features/WorkforceProfile/service/commonServices.ts",
+        "modules/features/ManageCourses/services/examManagement.services.ts",
+        "modules/features/ManageCourses/services/manageCourses.services.ts",
+        "modules/features/ManageCourses/services/quizManagement.services.ts",
+        "modules/features/CourseDetail/services/courseDetail.services.tsx",
+        "modules/features/Academy/services/academyExamination.service.tsx",
+        "services/profile/profileService.ts",
+        "services/common/commonService.ts",
+        "modules/features/WorkforceProfile/service/workforceServices.ts",
+        "modules/features/WhiteLabeling/services/tokens.services.ts",
+        "modules/features/WhiteLabeling/services/smtpConfiguration.services.tsx",
+        "modules/features/WhiteLabeling/services/theme.services.ts",
+        "modules/features/WhiteLabeling/services/helpSupport.ts",
+        "modules/features/WhiteLabeling/services/broadcasts.services.ts",
+        "modules/features/WhiteLabeling/services/customCertificate.services.ts",
+        "modules/features/WhiteLabeling/services/banners.services.ts",
+        "modules/features/VerifyWFPEmail/verifyWFPEmail.service.ts",
+        "modules/features/Teams/service/teamsServices.ts",
+        "modules/features/Teams/service/teamLeaderboard.Services.ts",
+        "modules/features/PaymentModule/services/paymentModule.services.ts",
+        "modules/features/MyShoppingCart/services/myShoppingCart.service.ts",
+        "modules/features/MyCourseDetails/services/course.services.tsx",
+        "modules/features/ManageCourses/services/unitAndLessonManagement.services.ts",
+        "modules/features/HelpAndSupport/services/helpAndSupport.services.ts",
+        "modules/features/Entity/services/entityServices.ts",
+        "modules/features/EmploymentEquity/services/employmentEquityPlan.service.ts",
+        "modules/features/EmploymentEquity/services/employmentEquityReports.services.ts",
+        "modules/features/EmploymentEquity/services/employmentEquity.service.ts",
+        "modules/features/EmploymentEquity/services/companyProfileServices.ts",
+        "modules/features/EmploymentEquity/services/companyRegistrationBasicService.ts",
+        "modules/features/EmploymentEquity/presentation/EmploymentEquityPlan/plan.service.ts",
+        "modules/features/EmploymentEquity/pages/LegalAppointmentPage/services/legalAppointment.services.ts",
+        "modules/features/EmploymentEquity/modules/WorkforceProfile/services/workforceProfile.services.ts",
+        "modules/features/EmploymentEquity/modules/Plan/WorkforceAnalysis/services/wfa.services.tsx",
+        "modules/features/EmploymentEquity/modules/Plan/Configuration/services/EEPlanConfigurationServices.ts",
+        "modules/features/DownloadApp/services/downloadApp.services.tsx",
+        "modules/features/DefaultCompanyProfile/services/companyRegistrationBasicService.ts",
+        "modules/features/DashboardReporting/services/emailSubscribe.services.ts",
+        "modules/features/DashboardReporting/services/schedule.services.ts",
+        "modules/features/DashboardReporting/services/assignment.services.ts",
+        "modules/features/Dashboard/service/dashboard.services.tsx",
+        "modules/features/CoursesDetails/services/coursesDetails.services.ts",
+        "modules/features/CourseLibrary/services/courseLibrary.services.tsx",
+        "modules/features/CourseDetail/services/quizResult.services.ts",
+        "modules/features/CourseDetail/services/quiz.services.ts",
+        "modules/features/CourseDetail/services/exam.services.ts"
+      ],
+      "importCount": 50,
+      "description": "Global API endpoint constants used across entire frontend application for all services"
+    },
+    "modules/core/services/Interceptors": {
+      "importedBy": [
+        "modules/features/PassportToWork/services/passportToWork.service.ts",
+        "modules/features/PassportToWork/services/offerTemplates.service.ts",
+        "modules/features/PassportToWork/services/systemSettings.service.ts",
+        "modules/features/WorkforceProfile/service/commonServices.ts",
+        "modules/features/ManageCourses/services/examManagement.services.ts",
+        "modules/features/ManageCourses/services/manageCourses.services.ts",
+        "modules/features/ManageCourses/services/quizManagement.services.ts",
+        "modules/features/CourseDetail/services/courseDetail.services.tsx",
+        "modules/features/Academy/services/academyExamination.service.tsx"
+      ],
+      "importCount": 9,
+      "description": "Axios HTTP interceptor for API authentication and error handling"
+    },
+    "modules/features/PassportToWork/hooks/passportToWork.hook": {
+      "importedBy": [
+        "modules/features/PassportToWork/modules/Jobs/presentation/EditQuestionsModal/EditQuestionsModal.tsx",
+        "modules/features/PassportToWork/modules/Recruiter/presentation/SendOfferModal/SendOfferModal.tsx",
+        "modules/features/PassportToWork/pages/DebugDashboard/DebugDashboard.tsx"
+      ],
+      "importCount": 3,
+      "description": "Central React hook aggregating all PassportToWork business logic (jobs, applications, interviews)"
+    },
+    "modules/features/PassportToWork/models/offerLetter.types": {
+      "importedBy": [
+        "modules/features/PassportToWork/containers/OfferTemplatesTabContainer/OfferTemplatesTabContainer.tsx",
+        "modules/features/PassportToWork/modules/Jobs/presentation/JobInterviewResults/JobInterviewResults.tsx",
+        "modules/features/PassportToWork/modules/Recruiter/presentation/SendOfferModal/SendOfferModal.tsx",
+        "modules/features/PassportToWork/services/offerTemplates.service.ts",
+        "modules/features/PassportToWork/hooks/offerTemplates.hooks.ts",
+        "modules/features/PassportToWork/modules/Recruiter/presentation/OfferTemplateEditor/OfferTemplateEditor.tsx"
+      ],
+      "importCount": 6,
+      "description": "Type definitions for offer letter templates and sending functionality"
+    },
+    "modules/features/PassportToWork/services/offerTemplates.service": {
+      "importedBy": [
+        "modules/features/PassportToWork/hooks/offerTemplates.hooks.ts",
+        "modules/features/PassportToWork/hooks/passportToWork.hook.ts"
+      ],
+      "importCount": 2,
+      "description": "Service for offer letter template CRUD operations"
+    },
+    "modules/features/PassportToWork/services/systemSettings.service": {
+      "importedBy": [
+        "modules/features/PassportToWork/hooks/systemSettings.hooks.ts",
+        "modules/features/PassportToWork/hooks/passportToWork.hook.ts"
+      ],
+      "importCount": 2,
+      "description": "Service for provinces, cities, business units, and system configuration"
+    },
+    "modules/features/PassportToWork/hooks/jobs.hooks": {
+      "importedBy": [
+        "modules/features/PassportToWork/modules/Jobs/presentation/EditQuestionsModal/EditQuestionsModal.tsx",
+        "modules/features/PassportToWork/hooks/passportToWork.hook.ts"
+      ],
+      "importCount": 2,
+      "description": "React hooks for job operations"
+    },
+    "modules/features/PassportToWork/hooks/applications.hooks": {
+      "importedBy": [
+        "modules/features/PassportToWork/modules/Recruiter/presentation/SendOfferModal/SendOfferModal.tsx",
+        "modules/features/PassportToWork/hooks/passportToWork.hook.ts"
+      ],
+      "importCount": 2,
+      "description": "React hooks for application and candidate management"
+    },
+    "modules/features/PassportToWork/hooks/interviews.hooks": {
+      "importedBy": [
+        "modules/features/PassportToWork/pages/DebugDashboard/DebugDashboard.tsx",
+        "modules/features/PassportToWork/hooks/passportToWork.hook.ts"
+      ],
+      "importCount": 2,
+      "description": "React hooks for interview scheduling and management"
+    },
+    "modules/features/PassportToWork/hooks/systemSettings.hooks": {
+      "importedBy": [
+        "modules/features/PassportToWork/containers/ProvincesTabContainer/ProvincesTabContainer.tsx",
+        "modules/features/PassportToWork/hooks/passportToWork.hook.ts"
+      ],
+      "importCount": 2,
+      "description": "React hooks for system settings (provinces, cities, business units)"
+    },
+    "modules/features/PassportToWork/hooks/offerTemplates.hooks": {
+      "importedBy": [
+        "modules/features/PassportToWork/modules/Recruiter/presentation/SendOfferModal/SendOfferModal.tsx",
+        "modules/features/PassportToWork/hooks/passportToWork.hook.ts"
+      ],
+      "importCount": 2,
+      "description": "React hooks for offer template management"
+    },
+    "modules/features/PassportToWork/hooks/jobRequests.hooks": {
+      "importedBy": [
+        "modules/features/PassportToWork/modules/Manager/presentation/ManagerJobRequest/ManagerJobRequest.tsx",
+        "modules/features/PassportToWork/hooks/passportToWork.hook.ts"
+      ],
+      "importCount": 2,
+      "description": "React hooks for job request workflow"
+    },
+    "Services/Speccon.Tap.Services/Interfaces/Services/PassportToWork/IJobService": {
+      "importedBy": [
+        "Services/Speccon.Tap.Services/Services/PassportToWork/JobService.cs",
+        "Services/Speccon.Tap.Services/DependancyInjectionExtentions.cs",
+        "Presentation/Speccon.Tap.Api/Controllers/JobsController.cs",
+        "Services/Speccon.Tap.Services/Services/Users/Users/UserService.cs"
+      ],
+      "importCount": 4,
+      "description": "Backend interface for job operations"
+    },
+    "Services/Speccon.Tap.Services/Interfaces/Services/PassportToWork/IApplicationService": {
+      "importedBy": [
+        "Services/Speccon.Tap.Services/Services/PassportToWork/ApplicationService.cs",
+        "Services/Speccon.Tap.Services/DependancyInjectionExtentions.cs",
+        "Presentation/Speccon.Tap.Api/Controllers/ApplicationsController.cs"
+      ],
+      "importCount": 3,
+      "description": "Backend interface for application management"
+    },
+    "Services/Speccon.Tap.Services/Interfaces/Services/PassportToWork/IInterviewService": {
+      "importedBy": [
+        "Services/Speccon.Tap.Services/Services/PassportToWork/InterviewService.cs",
+        "Services/Speccon.Tap.Services/DependancyInjectionExtentions.cs",
+        "Presentation/Speccon.Tap.Api/Controllers/InterviewsController.cs"
+      ],
+      "importCount": 3,
+      "description": "Backend interface for interview scheduling and assessment"
+    },
+    "Services/Speccon.Tap.Services/Interfaces/Services/PassportToWork/IOfferTemplateService": {
+      "importedBy": [
+        "Services/Speccon.Tap.Services/Services/PassportToWork/OfferTemplateService.cs",
+        "Services/Speccon.Tap.Services/DependancyInjectionExtentions.cs",
+        "Presentation/Speccon.Tap.Api/Controllers/OfferTemplatesController.cs"
+      ],
+      "importCount": 3,
+      "description": "Backend interface for offer letter templates"
+    },
+    "Services/Speccon.Tap.Services/Interfaces/Services/PassportToWork/ISystemSettingsService": {
+      "importedBy": [
+        "Services/Speccon.Tap.Services/Services/PassportToWork/SystemSettingsService.cs",
+        "Services/Speccon.Tap.Services/DependancyInjectionExtentions.cs",
+        "Presentation/Speccon.Tap.Api/Controllers/SystemSettingsController.cs"
+      ],
+      "importCount": 3,
+      "description": "Backend interface for system configuration (provinces, cities, users)"
+    },
+    "Infrastructure/Data/Speccon.Tap.Data/AppContext/AppDbContext": {
+      "importedBy": [
+        "Infrastructure/Data/Speccon.Tap.Data/DependancyInjectionExtentions.cs",
+        "Services/Speccon.Tap.Services/Services/PassportToWork/JobService.cs",
+        "Services/Speccon.Tap.Services/Services/PassportToWork/ApplicationService.cs",
+        "Services/Speccon.Tap.Services/Services/PassportToWork/InterviewService.cs",
+        "Services/Speccon.Tap.Services/Services/PassportToWork/SystemSettingsService.cs"
+      ],
+      "importCount": 5,
+      "description": "Entity Framework DbContext with PassportToWork entity sets"
+    },
+    "Domain/Speccon.Tap.Domain/Entities/PassportToWork/Job": {
+      "importedBy": [
+        "Services/Speccon.Tap.Services/Services/PassportToWork/JobService.cs",
+        "Infrastructure/Data/Speccon.Tap.Data/AppContext/AppDbContext.cs",
+        "Presentation/Speccon.Tap.Api/Controllers/JobsController.cs"
+      ],
+      "importCount": 3,
+      "description": "Job entity domain model"
+    },
+    "Domain/Speccon.Tap.Domain/Entities/PassportToWork/Application": {
+      "importedBy": [
+        "Services/Speccon.Tap.Services/Services/PassportToWork/ApplicationService.cs",
+        "Infrastructure/Data/Speccon.Tap.Data/AppContext/AppDbContext.cs",
+        "Presentation/Speccon.Tap.Api/Controllers/ApplicationsController.cs"
+      ],
+      "importCount": 3,
+      "description": "Application entity domain model"
+    },
+    "Domain/Speccon.Tap.Domain/Entities/PassportToWork/Interview": {
+      "importedBy": [
+        "Services/Speccon.Tap.Services/Services/PassportToWork/InterviewService.cs",
+        "Infrastructure/Data/Speccon.Tap.Data/AppContext/AppDbContext.cs",
+        "Presentation/Speccon.Tap.Api/Controllers/InterviewsController.cs"
+      ],
+      "importCount": 3,
+      "description": "Interview entity domain model"
+    },
+    "Domain/Speccon.Tap.Domain/Entities/PassportToWork/OfferTemplate": {
+      "importedBy": [
+        "Services/Speccon.Tap.Services/Services/PassportToWork/OfferTemplateService.cs",
+        "Infrastructure/Data/Speccon.Tap.Data/AppContext/AppDbContext.cs",
+        "Presentation/Speccon.Tap.Api/Controllers/OfferTemplatesController.cs"
+      ],
+      "importCount": 3,
+      "description": "OfferTemplate entity domain model"
+    }
+  },
+  "highImpactFiles": [
+    {
+      "file": "modules/core/models/enums/url.enums",
+      "importCount": 50,
+      "description": "Global API endpoints - critical infrastructure imported by all services"
+    },
+    {
+      "file": "modules/features/PassportToWork/services/passportToWork.service",
+      "importCount": 38,
+      "description": "Aggregated PassportToWork service - imported by 38 components/hooks"
+    },
+    {
+      "file": "modules/core/services/Interceptors",
+      "importCount": 9,
+      "description": "HTTP interceptor for authentication - used by all API services"
+    },
+    {
+      "file": "modules/features/PassportToWork/hooks/passportToWork.hook",
+      "importCount": 3,
+      "description": "Central hook - imported by modal and debug components"
+    },
+    {
+      "file": "modules/features/PassportToWork/models/offerLetter.types",
+      "importCount": 6,
+      "description": "Offer letter types - imported by UI components and services"
+    },
+    {
+      "file": "Infrastructure/Data/Speccon.Tap.Data/AppContext/AppDbContext",
+      "importCount": 5,
+      "description": "Backend DbContext - referenced by services and dependency injection"
+    },
+    {
+      "file": "Services/Speccon.Tap.Services/Interfaces/Services/PassportToWork/IJobService",
+      "importCount": 4,
+      "description": "Job service interface - implemented and used by controller and DI"
+    }
+  ],
+  "summary": {
+    "totalGraphEntries": 23,
+    "frontendFilesWithImports": 18,
+    "backendFilesWithImports": 5,
+    "filesMeetingThreshold": 23,
+    "passportToWorkModuleFileCount": 175,
+    "averageImportCount": 6.4,
+    "recommendedMaxEntries": 75
+  }
+}

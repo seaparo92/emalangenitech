@@ -50,8 +50,8 @@ export const AboutUs: React.FC = () => {
                 {/* Hero */}
                 <section className="relative bg-[#00343C] overflow-hidden">
                     <div className="absolute inset-0 pointer-events-none">
-                        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#81d742]/10 rounded-full blur-3xl" />
-                        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#81d742]/5 rounded-full blur-3xl" />
+                        <img src="/images/ABOUT US.png" alt="" className="w-full h-full object-cover opacity-60" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#00343C]/95 via-[#00343C]/70 to-transparent" />
                     </div>
                     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 lg:py-36">
                         <div className="max-w-3xl">
@@ -96,8 +96,12 @@ export const AboutUs: React.FC = () => {
                 </section>
 
                 {/* Our Background */}
-                <section className="py-24 bg-white">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <section className="py-24 relative overflow-hidden">
+                    <div className="absolute inset-0 pointer-events-none">
+                        <img src="/images/ABOUT US.png" alt="" className="w-full h-full object-cover" />
+                        <div className="absolute inset-0 bg-white/95" />
+                    </div>
+                    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="grid lg:grid-cols-2 gap-16 items-center">
                             <div>
                                 <span className="text-[#81d742] text-xs font-bold uppercase tracking-[0.3em] mb-3 block">Our Story</span>

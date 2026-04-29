@@ -1,0 +1,155 @@
+{
+  "generated": "2026-01-29",
+  "projectInfo": {
+    "backend": "Speccon_TAP_Ext/src-tap",
+    "frontend": "Speccon_TAP_Ext_React/Speccon.Tap.Web/src",
+    "architecture": "N-Tier (.NET) + React SPA with EF Core + SQL Server"
+  },
+  "registrationPoints": {
+    "backend": [
+      {
+        "type": "service-di",
+        "file": "Services/Speccon.Tap.Services/DependancyInjectionExtentions.cs",
+        "className": "DependancyInjectionExtentions",
+        "methodName": "AddApplicationServices",
+        "region": "PassportToWork",
+        "regionStartLine": 324,
+        "regionEndLine": 332,
+        "insertAfterLine": 331,
+        "pattern": "services.AddTransient<I{Name}Service, {Name}Service>();",
+        "grepCheck": "I{Name}Service",
+        "required": true,
+        "description": "Service interface to implementation mapping for business logic services",
+        "notes": [
+          "Pattern: AddTransient for stateless services",
+          "Region marked with #region PassportToWork ... #endregion",
+          "Register services BEFORE the #endregion on line 332",
+          "Insert after last service registration in region",
+          "Always use IServiceCollection extension method pattern"
+        ]
+      },
+      {
+        "type": "repository-di",
+        "file": "Infrastructure/Data/Speccon.Tap.Data/DependancyInjectionExtentions.cs",
+        "className": "DependencyInjectionExtensions",
+        "methodName": "AddApplicationDbContextAndRepositories",
+        "region": "PassportToWork",
+        "regionStartLine": 429,
+        "regionEndLine": 442,
+        "insertAfterLine": 441,
+        "pattern": "services.AddTransient<IGenericRepository<{Entity}>, GenericRepository<{Entity}>>();",
+        "grepCheck": "IGenericRepository<{Entity}>",
+        "required": true,
+        "description": "Generic repository for entity database access layer",
+        "notes": [
+          "Pattern: AddTransient for generic repositories",
+          "Region marked with #region PassportToWork ... #endregion",
+          "Register repositories BEFORE the #endregion on line 442",
+          "Each entity needs IGenericRepository<T> registration",
+          "Also register any specialized repositories (e.g., IApplicationRepository if custom logic needed)"
+        ]
+      },
+      {
+        "type": "dbcontext-dbset",
+        "file": "Infrastructure/Data/Speccon.Tap.Data/AppContext/AppDbContext.cs",
+        "className": "AppDbContext",
+        "region": "DbSets",
+        "regionStartLine": 81,
+        "regionEndLine": 354,
+        "insertAfterLine": 337,
+        "pattern": "public virtual DbSet<{Entity}> {Entity} { get; set; }",
+        "grepCheck": "public virtual DbSet<{Entity}>",
+        "required": true,
+        "description": "EF Core DbSet declaration for database table mapping",
+        "notes": [
+          "PassportToWork DbSet declarations are at lines 327-341",
+          "No region marker for PassportToWork specifically, all DbSets in single region",
+          "Insert after OfferTemplate DbSet on line 337",
+          "DbSet property name should match entity name or be descriptive plural",
+          "Declaration: public virtual DbSet<EntityName> PropertyName { get; set; }",
+          "Entities must inherit from base entity class if using base configuration"
+        ]
+      }
+    ],
+    "frontend": [
+      {
+        "type": "route",
+        "file": "src/Routes.tsx",
+        "componentRegistry": "Dynamic lazy loading at top of file (lines 1-470)",
+        "routeDefinition": "createBrowserRouter array starting at line 473",
+        "pattern": "{\n  path: ROUTES_CONST.{FEATURE_ROUTE},\n  element: <{ComponentName} />,\n  index: true\n}",
+        "grepCheck": "path.*ROUTES_CONST",
+        "required": false,
+        "description": "Route registration (only if new page component created)",
+        "notes": [
+          "Components imported as lazy via React.lazy() at top of file",
+          "Each route object added to createBrowserRouter array",
+          "Use ROUTES_CONST from core.constants for route paths",
+          "Set index: true for parent routes, remove for child routes",
+          "Protected routes wrap element with ProtectRoute component if needed",
+          "Use consistent indentation (2 spaces) matching existing routes"
+        ]
+      },
+      {
+        "type": "barrel-export",
+        "file": "src/modules/{feature}/index.ts",
+        "pattern": "export { ComponentName } from './pages/{ComponentName}';\nexport { AnotherComponent } from './components/{AnotherComponent}';",
+        "required": false,
+        "description": "Barrel export for feature module components (optional)",
+        "notes": [
+          "Only needed if creating reusable feature exports",
+          "Location: src/modules/{feature-name}/index.ts",
+          "Export all public components and utilities",
+          "Enables clean imports: import { Component } from 'modules/feature'"
+        ]
+      }
+    ]
+  },
+  "verificationOrder": [
+    "dbcontext-dbset",
+    "repository-di",
+    "service-di",
+    "route"
+  ],
+  "fileStructureGuide": {
+    "backend": {
+      "domain": "Domain/Speccon.Tap.Domain/Entities/ - Entity classes",
+      "data": "Infrastructure/Data/Speccon.Tap.Data/ - Repositories, DbContext, DI",
+      "services": "Services/Speccon.Tap.Services/ - Business logic, DTOs, DI",
+      "api": "Presentation/Speccon.Tap.Api/ - Controllers, API endpoints",
+      "migrations": "Infrastructure/Data/Speccon.Tap.Data/AppContext/Migrations/ - EF Core migrations (DO NOT EDIT MANUALLY)"
+    },
+    "frontend": {
+      "modules": "src/modules/ - Feature modules",
+      "core": "src/modules/core/ - Shared utilities, constants, models",
+      "features": "src/modules/features/ - Feature components and pages",
+      "auth": "src/modules/auth/ - Authentication related"
+    }
+  },
+  "commonPatterns": {
+    "serviceRegistration": "services.Add{Lifetime}<I{ServiceName}, {ServiceName}>()",
+    "repositoryRegistration": "services.Add{Lifetime}<IGenericRepository<{Entity}>, GenericRepository<{Entity}>>()",
+    "lifetimes": {
+      "AddTransient": "New instance every time (stateless services)",
+      "AddScoped": "One instance per HTTP request (db contexts)",
+      "AddSingleton": "One instance for application lifetime (expensive resources)"
+    }
+  },
+  "importantRules": [
+    "NEVER manually edit migrations in AppContext/Migrations/ - create database-changes/*.txt instead",
+    "All entities must be registered in DbContext as DbSet<T>",
+    "All DbSet entities must have repository registrations",
+    "All services must be registered in DI container before use",
+    "Use PassportToWork region for all PassportToWork feature registrations",
+    "Frontend routes use lazy loading for code splitting",
+    "Always use ROUTES_CONST enum for route paths (consistency)",
+    "Repositories use IGenericRepository<T> pattern for CRUD operations"
+  ],
+  "exampleEntity": {
+    "entityFile": "Domain/Speccon.Tap.Domain/Entities/PassportToWork/Job.cs",
+    "dtoFile": "Services/Speccon.Tap.Services/ServiceDtos/PassportToWork/{Entity}Dto.cs",
+    "interfaceFile": "Services/Speccon.Tap.Services/Interfaces/AppRepositories/PassportToWork/I{Entity}Repository.cs",
+    "repositoryFile": "Infrastructure/Data/Speccon.Tap.Data/AppRepositories/PassportToWork/{Entity}Repository.cs",
+    "controllerFile": "Presentation/Speccon.Tap.Api/Controllers/{Entity}Controller.cs"
+  }
+}

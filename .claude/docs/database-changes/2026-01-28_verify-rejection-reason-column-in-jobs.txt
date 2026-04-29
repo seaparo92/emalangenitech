@@ -1,0 +1,40 @@
+Database Change Request: Verify/Add RejectionReason columns to Jobs table
+Date: 2026-01-28
+Affected Table: dbo.Jobs
+Reason: Support job rejection workflow where recruiters can reject pending jobs with a reason, and managers can see why their job request was rejected.
+
+CONTEXT:
+- The Job entity (Job.cs) already has RejectionReason and related fields defined
+- The JobDto already maps these fields
+- The RejectJob method in JobService.cs saves the rejection reason
+- However, no migration was found that adds these columns to the database
+- Need to verify if columns exist, and add them if missing
+
+-- VERIFY SCRIPT (run first to check if columns exist)
+SELECT COLUMN_NAME
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'Jobs'
+AND COLUMN_NAME IN ('RejectionReason', 'ChangeRequestNotes');
+
+-- APPLY SCRIPT (only if columns don't exist)
+IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Jobs' AND COLUMN_NAME = 'RejectionReason')
+BEGIN
+    ALTER TABLE dbo.Jobs ADD RejectionReason NVARCHAR(MAX) NULL;
+    PRINT 'Added RejectionReason column';
+END
+
+IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Jobs' AND COLUMN_NAME = 'ChangeRequestNotes')
+BEGIN
+    ALTER TABLE dbo.Jobs ADD ChangeRequestNotes NVARCHAR(MAX) NULL;
+    PRINT 'Added ChangeRequestNotes column';
+END
+
+-- ROLLBACK SCRIPT
+ALTER TABLE dbo.Jobs DROP COLUMN RejectionReason;
+ALTER TABLE dbo.Jobs DROP COLUMN ChangeRequestNotes;
+
+ADDITIONAL NOTE:
+The backend RejectJob method currently sets status to "Incomplete" instead of "Rejected".
+If you want a separate "Rejected" status for the manager portal, the JobService.cs line 371 needs to be updated:
+    Current:  job.Status = "Incomplete";
+    Change to: job.Status = "Rejected";

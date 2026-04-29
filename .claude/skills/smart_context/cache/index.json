@@ -1,0 +1,89 @@
+{
+  "generated": "2026-01-28T10:18:12.512822",
+  "root": "C:\\Users\\USER-PC\\Desktop\\P2W",
+  "stack": {
+    "frontend": "react",
+    "backend": "dotnet"
+  },
+  "structure": {
+    "controllers": "Speccon_TAP_Ext\\Controllers",
+    "services": "Speccon_TAP_Ext_React\\Speccon.Tap.Web\\src\\Services"
+  },
+  "docs": {
+    "api_contracts": ".claude/docs/api-contracts/contracts/",
+    "pending_backend": ".claude/docs/api-contracts/pending-backend.md",
+    "pending_frontend": ".claude/docs/api-contracts/pending-frontend.md",
+    "validation_report": ".claude/docs/api-contracts/validation-report.md"
+  },
+  "config": {
+    "watcher_config": ".claude/skills/project_map/watcher_config.json",
+    "project_map": ".claude/skills/project_map/project.map.md"
+  },
+  "skills": {
+    "coding_standards": ".claude/skills/coding-standards/SKILL.md",
+    "api_docs_sync": ".claude/skills/api-docs-sync/SKILL.md",
+    "api_validator": ".claude/skills/api-validator/SKILL.md",
+    "smart_context": ".claude/skills/smart_context/skill.md",
+    "project_map": ".claude/skills/project_map/",
+    "strategic_compact": ".claude/skills/strategic-compact/SKILL.md"
+  },
+  "features": [
+    "AboutUs",
+    "Academy",
+    "AcademyAnalytics",
+    "AcademyExamination",
+    "AcademyMaster",
+    "AcademyWebhook",
+    "AccessKeys",
+    "AdminReports",
+    "Applications",
+    "Assessment",
+    "Base",
+    "BillingDetails",
+    "BroadCast",
+    "Buddies",
+    "BuddiesDocument",
+    "BuddiesProfile",
+    "BundlesDetails",
+    "CertificateSignature",
+    "Client",
+    "CompanyProfile",
+    "CompanyThemeSetting",
+    "ContactUs",
+    "Course",
+    "CourseDetail",
+    "CourseLibrary",
+    "CourseManagement",
+    "CoursesDetails",
+    "CreateCourse",
+    "Dashboard",
+    "DashboardReporting",
+    "DefaultCompanyProfile",
+    "DefaultDashboard",
+    "Document",
+    "DownloadApp",
+    "EmploymentEquity",
+    "EmploymentEquityReporting",
+    "Entity",
+    "EntityCompanyProfile",
+    "EntityEquityCommitteeMeeting",
+    "EntityEquityCommitteeMember",
+    "EntityEquityManager",
+    "EntityPlan",
+    "EntitySection",
+    "EntityWorkForceAnalysis",
+    "EquityEntityConfiguration",
+    "EquityWorkforceProfile",
+    "EquityWorkforceProfileEmploymentHistory",
+    "EquityWorkforceProfilePayroll",
+    "ExamManagement",
+    "Game"
+  ],
+  "patterns": {
+    "page": "*Page.*",
+    "container": "*Container.*",
+    "hook": "*Hook.*",
+    "service": "*Service.*",
+    "controller": "*Controller.*"
+  }
+}

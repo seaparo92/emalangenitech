@@ -82,8 +82,8 @@ export const ContactUs: React.FC = () => {
             {/* ── Hero ─────────────────────────────────────── */}
             <section className="relative bg-[#00343C] overflow-hidden">
                 <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#81d742]/10 rounded-full blur-3xl" />
-                    <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#81d742]/5 rounded-full blur-3xl" />
+                    <img src="/images/Contact us Emalangeni.png" alt="" className="w-full h-full object-cover opacity-60" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#00343C]/95 via-[#00343C]/70 to-transparent" />
                 </div>
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
                     <div className="max-w-3xl">
@@ -105,51 +105,41 @@ export const ContactUs: React.FC = () => {
                 </div>
             </section>
 
-            {/* ── Quick Contact Cards ───────────────────────── */}
+            {/* ── Branch Offices ───────────────────────────── */}
             <section className="bg-[#81d742] py-12">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid sm:grid-cols-3 gap-6">
-                        {/* Cards use dark text since bg is green */}
-                        {[
-                            {
-                                icon: Mail,
-                                title: 'Email Us',
-                                primary: 'info@emalangenitech.co.za',
-                                secondary: 'support@emalangenitech.co.za',
-                                note: 'Response within 24 hours',
-                                href: 'mailto:info@emalangenitech.co.za',
-                            },
-                            {
-                                icon: Phone,
-                                title: 'Call Us',
-                                primary: '0800 014 995 (Toll Free)',
-                                secondary: 'WhatsApp: 061 444 8794',
-                                note: 'Mon – Fri, 08:00 – 17:00 SAST',
-                                href: 'tel:0800014995',
-                            },
-                            {
-                                icon: MapPin,
-                                title: 'Visit Us',
-                                primary: '123 Tech Park Drive',
-                                secondary: 'Pretoria, Gauteng, 0001',
-                                note: 'By appointment only',
-                                href: null,
-                            },
-                        ].map(card => (
-                            <div key={card.title} className="bg-white/10 backdrop-blur rounded-2xl p-7 text-white border border-white/20 hover:bg-white/20 transition-all duration-300">
-                                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-4">
-                                    <card.icon className="w-6 h-6 text-white" />
-                                </div>
-                                <h3 className="font-bold text-lg mb-2">{card.title}</h3>
-                                {card.href ? (
-                                    <a href={card.href} className="font-semibold hover:underline block leading-relaxed">{card.primary}</a>
-                                ) : (
-                                    <p className="font-semibold leading-relaxed">{card.primary}</p>
-                                )}
-                                <p className="text-white/70 text-sm mt-1">{card.secondary}</p>
-                                <p className="text-white/50 text-xs mt-3 pt-3 border-t border-white/20">{card.note}</p>
-                            </div>
-                        ))}
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {/* Mpumalanga Office */}
+                        <div className="bg-white/10 backdrop-blur rounded-2xl p-7 text-white border border-white/20 hover:bg-white/20 transition-all duration-300">
+                            <h3 className="font-bold text-lg mb-4">Mpumalanga</h3>
+                            <p className="text-sm mb-2">22 Bulpin Street, Unit No 1<br />Delta Complex<br />Nelspruit, 1200</p>
+                            <p className="text-sm font-semibold mt-4">013 004 0180</p>
+                            <p className="text-sm text-white/70">info@emalangenitech.co.za</p>
+                        </div>
+
+                        {/* Limpopo Office */}
+                        <div className="bg-white/10 backdrop-blur rounded-2xl p-7 text-white border border-white/20 hover:bg-white/20 transition-all duration-300">
+                            <h3 className="font-bold text-lg mb-4">Limpopo</h3>
+                            <p className="text-sm mb-2">1 Ivory Villas, 18 Dorp Street<br />Polokwane, 0699</p>
+                            <p className="text-sm font-semibold mt-4">015 004 1393</p>
+                            <p className="text-sm text-white/70">info@emalangenitech.co.za</p>
+                        </div>
+
+                        {/* KZN Office */}
+                        <div className="bg-white/10 backdrop-blur rounded-2xl p-7 text-white border border-white/20 hover:bg-white/20 transition-all duration-300">
+                            <h3 className="font-bold text-lg mb-4">KZN</h3>
+                            <p className="text-sm mb-2">Office 4, Block 1<br />3 Dumat Place Mount<br />Edgecombe, 4301</p>
+                            <p className="text-sm font-semibold mt-4">031 100 0720</p>
+                            <p className="text-sm text-white/70">kzn@emalangenitech.co.za</p>
+                        </div>
+
+                        {/* Gauteng Office */}
+                        <div className="bg-white/10 backdrop-blur rounded-2xl p-7 text-white border border-white/20 hover:bg-white/20 transition-all duration-300">
+                            <h3 className="font-bold text-lg mb-4">Gauteng</h3>
+                            <p className="text-sm mb-2">3 Villa Place, Berkeley Avenue<br />Bryanston, 2191</p>
+                            <p className="text-sm font-semibold mt-4">013 004 0627</p>
+                            <p className="text-sm text-white/70">info@emalangenitech.co.za</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -244,10 +234,9 @@ export const ContactUs: React.FC = () => {
                                             <MapPin className="w-5 h-5 text-[#81d742]" />
                                         </div>
                                         <div>
-                                            <p className="text-white/50 text-xs uppercase tracking-wide mb-1">Physical Address</p>
-                                            <p className="font-semibold">123 Tech Park Drive</p>
-                                            <p className="text-white/70 text-sm">Pretoria, Gauteng, 0001</p>
-                                            <p className="text-white/70 text-sm">South Africa</p>
+                                            <p className="text-white/50 text-xs uppercase tracking-wide mb-1">Gauteng (Head Office)</p>
+                                            <p className="font-semibold">3 Villa Place, Berkeley Avenue</p>
+                                            <p className="text-white/70 text-sm">Bryanston, 2191</p>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-4">
@@ -257,7 +246,6 @@ export const ContactUs: React.FC = () => {
                                         <div>
                                             <p className="text-white/50 text-xs uppercase tracking-wide mb-1">Email</p>
                                             <a href="mailto:info@emalangenitech.co.za" className="font-semibold hover:text-[#81d742] transition-colors block">info@emalangenitech.co.za</a>
-                                            <a href="mailto:support@emalangenitech.co.za" className="text-white/70 text-sm hover:text-[#81d742] transition-colors block">support@emalangenitech.co.za</a>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-4">
@@ -266,8 +254,7 @@ export const ContactUs: React.FC = () => {
                                         </div>
                                         <div>
                                             <p className="text-white/50 text-xs uppercase tracking-wide mb-1">Phone</p>
-                                            <a href="tel:0800014995" className="font-semibold hover:text-[#81d742] transition-colors block">0800 014 995 (Toll Free)</a>
-                                            <a href="tel:0614448794" className="text-white/70 text-sm hover:text-[#81d742] transition-colors block">061 444 8794 (WhatsApp)</a>
+                                            <a href="tel:0130040627" className="font-semibold hover:text-[#81d742] transition-colors block">013 004 0627</a>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-4">

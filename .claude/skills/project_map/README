@@ -1,0 +1,100 @@
+Project Map Skill for Claude
+============================
+
+This Claude skill maps your full project (backend + frontend), tracks changes,
+and generates a persistent project map (`project.map.md`) for Claude to reference.
+It supports:
+- C# backend (controllers, endpoints, DTOs)
+- React frontend (pages, components, API calls)
+- FE → BE mappings
+- Automatic updates on project changes (with cooldown)
+- Persistent context to avoid rescanning
+
+Folder Structure
+----------------
+P2W (solution root)
+├─ .claude
+│   └─ skills
+│       └─ project_map
+│           ├─ project.map.md         ← auto-generated map file
+│           ├─ map.rules.md           ← Claude rules for referencing the map
+│           ├─ ai_map_updater.py      ← generates/upates the map
+│           └─ map_watcher.py         ← watches project changes
+
+Prerequisites
+-------------
+- Python 3.10+ installed
+- pip (Python package manager)
+- watchdog Python package (file system monitoring)
+- Visual Studio / .NET installed for C# projects
+
+Installation Steps
+------------------
+
+1. Install Python
+- Download Python: https://www.python.org/downloads/windows/
+- Check “Add Python to PATH” during installation
+- Verify installation:
+  > python --version
+
+2. Install Watchdog
+- Open PowerShell and run:
+  > python -m pip install --upgrade pip
+  > python -m pip install watchdog
+- Verify installation:
+  > python -m pip show watchdog
+
+3. Place Project Map Skill
+- Copy the folder `.claude/skills/project_map` into your project root.
+
+4. Adjust Paths (Optional)
+- By default, `map_watcher.py` uses:
+  UPDATER = r"C:\Users\USER-PC\Desktop\P2W\.claude\skills\project_map\ai_map_updater.py"
+- Update to match absolute path on the new project if different.
+- Or keep relative paths if running from project root.
+
+5. Start the Watcher
+- From the project root:
+  > python .claude\skills\project_map\map_watcher.py
+- The watcher generates an initial map immediately.
+- Subsequent updates occur at most once every 5 minutes (cooldown).
+
+6. Configure Claude Rules
+- Create or update `.claude/rules.md` with:
+  System: Always consult `.claude/skills/project_map/project.map.md` before making any decisions. Do not rescan the project. Do not assume missing endpoints or components — only use information from the map.
+
+- Also include:
+  # Project Map Usage Rules
+  1. Treat `project.map.md` as persistent memory of project structure.
+  2. Update internal understanding only when the CHANGE LOG timestamp changes.
+  3. Never modify `project.map.md`.
+  4. Prioritize information from `project.map.md` over guesses.
+
+How It Works
+------------
+1. Watcher (`map_watcher.py`) monitors your backend/frontend folders.
+2. On first run or structural changes, Updater (`ai_map_updater.py`) generates `project.map.md`.
+3. Claude reads `project.map.md` for persistent project knowledge.
+4. Map includes:
+   - Backend controllers & endpoints
+   - DTO classes
+   - Frontend pages, components, API calls
+   - FE → BE mappings
+   - Timestamped change log
+5. The watcher never modifies code, only updates the map.
+
+Tips
+----
+- Keep `project.map.md` inside `.claude/skills/project_map` for consistency.
+- Adjust `IGNORE` folders in watcher/updater for your project structure.
+- Use absolute path in watcher for reliability, or relative path if running from project root.
+- Change `COOLDOWN` in `map_watcher.py` to adjust update frequency.
+
+Summary
+-------
+- Place `.claude/skills/project_map` in project root
+- Install Python + Watchdog
+- Start watcher → initial map generated
+- Claude reads `project.map.md` → persistent memory
+- Updates automatically when project changes
+

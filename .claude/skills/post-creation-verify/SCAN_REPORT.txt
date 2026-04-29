@@ -1,0 +1,214 @@
+================================================================================
+FULL-STACK PROJECT REGISTRATION POINTS SCAN REPORT
+Generated: 2026-01-29
+================================================================================
+
+PROJECT STRUCTURE
+-----------------
+Backend: c:/Users/USER-PC/Desktop/P2W/Speccon_TAP_Ext/src-tap
+Frontend: c:/Users/USER-PC/Desktop/P2W/Speccon_TAP_Ext_React/Speccon.Tap.Web/src
+Architecture: N-Tier (.NET) with React SPA frontend
+
+================================================================================
+BACKEND REGISTRATION POINTS FOUND
+================================================================================
+
+1. SERVICE DEPENDENCY INJECTION
+   File: Services/Speccon.Tap.Services/DependancyInjectionExtentions.cs
+   - Class: DependancyInjectionExtentions
+   - Method: AddApplicationServices (public static IServiceCollection)
+   - Region: #region PassportToWork ... #endregion (lines 324-332)
+   - Total Services Registered: 100+ (across all regions)
+   - PassportToWork Services: 7
+     * IApplicationService → ApplicationService
+     * IEmployEquityService → EmployEquityService
+     * IHeadhuntingService → HeadhuntingService
+     * IInterviewService → InterviewService
+     * ISystemSettingsService → SystemSettingsService
+     * IJobService → JobService
+     * IOfferTemplateService → OfferTemplateService
+   - Insertion Point: Line 331 (after last service, before #endregion)
+   - Pattern: services.AddTransient<I{Name}Service, {Name}Service>();
+
+2. REPOSITORY DEPENDENCY INJECTION
+   File: Infrastructure/Data/Speccon.Tap.Data/DependancyInjectionExtentions.cs
+   - Class: DependencyInjectionExtensions
+   - Method: AddApplicationDbContextAndRepositories
+   - DbContexts Registered: 2 (AppDbContext, AppDbContextBackground)
+   - Region: #region PassportToWork ... #endregion (lines 429-442)
+   - Total Generic Repositories: 200+ (across all regions)
+   - PassportToWork Generic Repositories: 12
+     * IGenericRepository<Job>
+     * IGenericRepository<Application>
+     * IGenericRepository<Interview>
+     * IGenericRepository<InterviewSlot>
+     * IGenericRepository<JobRequirement>
+     * IGenericRepository<JobQuestion>
+     * IGenericRepository<JobPlatform>
+     * IGenericRepository<JobRequiredCourse>
+     * IGenericRepository<JobRequiredAssessment>
+     * IGenericRepository<InterviewAssessment>
+     * IGenericRepository<InterviewQuestionResponse>
+     * IGenericRepository<OfferTemplate>
+   - Insertion Point: Line 441 (after OfferTemplate, before #endregion)
+   - Pattern: services.AddTransient<IGenericRepository<{Entity}>, GenericRepository<{Entity}>>();
+
+3. DATABASE CONTEXT & ENTITY MAPPING
+   File: Infrastructure/Data/Speccon.Tap.Data/AppContext/AppDbContext.cs
+   - Class: AppDbContext (extends IdentityDbContext)
+   - Total DbSets: 300+ (spanning lines 81-354)
+   - Region: #region DbSets (lines 81-354)
+   - PassportToWork Entities (lines 327-341):
+     * public virtual DbSet<Application> Application { get; set; }
+     * public virtual DbSet<Interview> Interview { get; set; }
+     * public virtual DbSet<InterviewAssessment> InterviewAssessment { get; set; }
+     * public virtual DbSet<InterviewQuestionResponse> InterviewQuestionResponse { get; set; }
+     * public virtual DbSet<InterviewSlot> InterviewSlot { get; set; }
+     * public virtual DbSet<Job> Job { get; set; }
+     * public virtual DbSet<JobPlatform> JobPlatform { get; set; }
+     * public virtual DbSet<JobRequiredAssessment> JobRequiredAssessment { get; set; }
+     * public virtual DbSet<JobRequiredCourse> JobRequiredCourse { get; set; }
+     * public virtual DbSet<JobRequirement> JobRequirement { get; set; }
+     * public virtual DbSet<OfferTemplate> OfferTemplate { get; set; }
+   - Insertion Point: After line 337 (after OfferTemplate DbSet)
+   - Pattern: public virtual DbSet<{Entity}> {PropertyName} { get; set; }
+
+4. API LEVEL REGISTRATIONS
+   File: Presentation/Speccon.Tap.Api/Extension/DependencyInjectionExtensions.cs
+   - Class: DependencyInjectionExtensions
+   - Method: AddTapService
+   - Validators Registered: 8+ (FluentValidation)
+   - Filters Registered: ValidateFilter (scoped)
+
+   File: Presentation/Speccon.Tap.Enterprise/Extensions/DependencyInjectionExtensions.cs
+   - Class: DependencyInjectionExtensions
+   - Method: AddEnterpriseServices
+   - Identity Configuration: AddIdentity<IdentityUser, IdentityRole>
+   - Validators Registered: 3+ (Enterprise-specific)
+
+================================================================================
+FRONTEND REGISTRATION POINTS FOUND
+================================================================================
+
+1. ROUTE DEFINITIONS
+   File: src/Routes.tsx
+   - Router Setup: createBrowserRouter([...])
+   - Route Array Start: Line 473
+   - Component Imports: Lines 1-470 (dynamic lazy-loading via React.lazy)
+   - Route Constants Source: modules/core/models/constants/core.constants.ts
+   - Total Routes: 50+ (public, auth, protected, feature routes)
+   - Lazy-Loaded Components: 100+
+   - Pattern:
+     * const ComponentName = lazy(() => import("./path/to/Component"));
+     * { path: ROUTES_CONST.ROUTE_NAME, element: <ComponentName />, index: true }
+
+2. BARREL EXPORTS (Index Pattern)
+   Location: src/modules/{feature}/index.ts
+   Found: 20+ barrel export files across modules
+   Pattern: export { Component } from './path/Component';
+   Usage: Enables clean imports from feature modules
+
+================================================================================
+KEY STATISTICS
+================================================================================
+
+Backend Files Scanned:
+  - DI Extension Files: 4
+  - DbContext Files: 2
+  - Total Service Registrations: 100+
+  - Total Repository Registrations: 250+
+  - Total DbSet Declarations: 300+
+  - Total Entities: 250+
+
+Frontend Files Scanned:
+  - Route Files: 1 main (Routes.tsx)
+  - Barrel Export Files: 20+
+  - Lazy-Loaded Components: 100+
+  - Total Routes: 50+
+
+================================================================================
+VERIFICATION CHECKLIST
+================================================================================
+
+Backend PassportToWork Feature:
+  [✓] DbContext DbSet declarations found (11 entities)
+  [✓] Repository DI registrations found (12 registrations)
+  [✓] Service DI registrations found (7 services)
+  [✓] Clear region markers for all PassportToWork sections
+  [✓] Insertion points identified with exact line numbers
+  [✓] Pattern consistency verified across all registration types
+
+Frontend PassportToWork Feature:
+  [✓] Routes.tsx file found with createBrowserRouter setup
+  [✓] Dynamic component lazy-loading pattern verified
+  [✓] ROUTES_CONST enum used for path constants
+  [✓] Protected route wrapper pattern verified
+  [✓] Index.ts barrel exports found throughout
+
+AutoMapper Verification:
+  [✓] No AutoMapper registrations found (project uses manual DTOs)
+  [✓] Services project contains DTOs in ServiceDtos/ structure
+
+================================================================================
+CACHE FILES CREATED
+================================================================================
+
+1. cache.json
+   - Location: .claude/skills/post-creation-verify/cache.json
+   - Size: 7.4 KB
+   - Format: JSON with comprehensive registration point metadata
+   - Includes: File paths, line numbers, patterns, insertion points, rules
+
+2. REGISTRATION_POINTS_SUMMARY.md
+   - Location: .claude/skills/post-creation-verify/REGISTRATION_POINTS_SUMMARY.md
+   - Size: 7.1 KB
+   - Format: Markdown documentation
+   - Includes: Detailed explanations, code examples, testing checklist
+
+3. SCAN_REPORT.txt
+   - Location: .claude/skills/post-creation-verify/SCAN_REPORT.txt
+   - Size: This file
+   - Format: Human-readable scan report
+
+================================================================================
+INSERTION POINTS SUMMARY
+================================================================================
+
+To add a new PassportToWork entity, follow this order:
+
+1. DbContext Registration:
+   File: Infrastructure/Data/Speccon.Tap.Data/AppContext/AppDbContext.cs
+   Location: Line 337 (after OfferTemplate)
+   Add: public virtual DbSet<{Entity}> {Entity} { get; set; }
+
+2. Repository DI Registration:
+   File: Infrastructure/Data/Speccon.Tap.Data/DependancyInjectionExtentions.cs
+   Location: Line 441 (after last PassportToWork registration)
+   Add: services.AddTransient<IGenericRepository<{Entity}>, GenericRepository<{Entity}>>();
+
+3. Service DI Registration:
+   File: Services/Speccon.Tap.Services/DependancyInjectionExtentions.cs
+   Location: Line 331 (after OfferTemplateService)
+   Add: services.AddTransient<I{Entity}Service, {Entity}Service>();
+
+4. Route Registration (if needed):
+   File: src/Routes.tsx
+   Location: Line 473+ (add to appropriate route section)
+   Add lazy import and route object
+
+================================================================================
+IMPORTANT RULES ENFORCED
+================================================================================
+
+1. NEVER manually edit migrations - use database-changes/*.txt instead
+2. All entities MUST have DbSet declarations
+3. All DbSet entities MUST have repository registrations
+4. All services MUST be registered in DI container
+5. Use PassportToWork region for ALL PassportToWork feature code
+6. Frontend routes use lazy loading for code splitting
+7. Always use ROUTES_CONST enum for route paths
+8. Repositories use IGenericRepository<T> pattern for CRUD
+
+================================================================================
+SCAN COMPLETE - All registration points identified and cached
+================================================================================
