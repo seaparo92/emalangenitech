@@ -64,15 +64,42 @@ export const ContactUs: React.FC = () => {
     });
     const [submitted, setSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [result, setResult] = useState('');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
-        setTimeout(() => { setLoading(false); setSubmitted(true); }, 1500);
+        setResult('');
+        
+        const formDataObj = new FormData();
+        formDataObj.append('access_key', 'bbe7f27b-2315-4e13-883a-76d981fa3556');
+        formDataObj.append('name', formData.name);
+        formDataObj.append('email', formData.email);
+        formDataObj.append('phone', formData.phone);
+        formDataObj.append('subject', formData.subject);
+        formDataObj.append('role', formData.role);
+        formDataObj.append('message', formData.message);
+
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formDataObj
+            });
+            const data = await response.json();
+            if (data.success) {
+                setSubmitted(true);
+                setResult('Success!');
+            } else {
+                setResult('Error: ' + (data.message || 'Unknown error'));
+            }
+        } catch (err) {
+            setResult('Error submitting form');
+        }
+        setLoading(false);
     };
 
     return (

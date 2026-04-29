@@ -75,13 +75,32 @@ export const Register: React.FC = () => {
         setFormData(prev => ({ ...prev, service: id }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
-        setTimeout(() => {
-            setLoading(false);
+        
+        const formDataObj = new FormData();
+        formDataObj.append('access_key', 'bbe7f27b-2315-4e13-883a-76d981fa3556');
+        formDataObj.append('name', formData.name);
+        formDataObj.append('email', formData.email);
+        formDataObj.append('phone', formData.phone);
+        formDataObj.append('company', formData.company);
+        formDataObj.append('service', formData.service);
+        formDataObj.append('message', formData.message);
+
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formDataObj
+            });
+            const data = await response.json();
+            if (data.success) {
+                setSubmitted(true);
+            }
+        } catch (err) {
             setSubmitted(true);
-        }, 1500);
+        }
+        setLoading(false);
     };
 
     const selectedService = SERVICES.find(s => s.id === formData.service);
