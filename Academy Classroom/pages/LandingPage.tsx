@@ -5,11 +5,8 @@ import {
     CheckCircle2,
     ArrowRight,
     Cpu,
-    Settings,
     Headphones,
-    Wifi,
     Zap,
-    DollarSign,
     Code2,
     Palette,
     TrendingUp,
@@ -29,137 +26,29 @@ export const LandingPage: React.FC = () => {
         <div className="min-h-screen bg-white">
             <LandingNavbar />
 
-             {/* Hero Section - Video Background */}
-            <div className="relative pt-16 pb-8 lg:pt-20 lg:pb-12 min-h-[calc(100vh-64px)] flex items-center overflow-hidden">
+            {/* Hero Section - Video Background */}
+            <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
                 {/* Background Video */}
                 <video
                     autoPlay
                     muted
                     loop
                     playsInline
-                    className="absolute inset-0 w-full h-full object-cover z-0"
+                    className="absolute inset-0 w-full h-full object-cover z-0 opacity-50"
                 >
                     <source src="/video/OPTION_01.mp4" type="video/mp4" />
                 </video>
-                
-                {/* Yellow Green Stripe */}
-                <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#81d742] z-20" />
-                
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-                    <div className="text-center max-w-5xl mx-auto">
-                        {/* Badge - smaller on mobile */}
-                       
 
-                        {/* Headline - more compact */}
-                        <h1 className="text-3xl sm:text-4xl lg:text-4xl xl:text-6xl font-bold text-[#fff] tracking-tight leading-tight mb-8 lg:mb-12">
-                            Connecting the world through <span className="text-[#fff]">Technology</span>
-                        </h1>
-                        <br />
-                        <br />
+                {/* Dark overlay */}
+                <div className="absolute inset-0 bg-black/60 z-10" />
 
-                        {/* Subheadline - more compact */}
-                        <p className="text-base lg:text-lg text-[#ffff] mb-6 lg:mb-8 max-w-2xl mx-auto">
-                            </p>
-
-                        {/* Get Started Section - compact header */}
-                        <div>
-                            
-                            {/* Cards Grid - compact for desktop, stacked for mobile */}
-                            <div className="grid md:grid-cols-2 gap-4 lg:gap-6 max-w-4xl mx-auto">
-                                {/* Emalangeni Connect Card */}
-                                <div
-                                    onClick={() => navigate('/services-solutions')}
-                                    className="group cursor-pointer relative overflow-hidden bg-transparent rounded-2xl lg:rounded-3xl border-2 border-slate-200 hover:border-[#81d742]/30 transition-all duration-300 hover:shadow-xl"
-                                >
-                                    {/* Dark overlay for contrast */}
-                                    <div className="absolute inset-0 bg-black/55 pointer-events-none" />
-                                    <div className="p-5 lg:p-6 text-left h-full flex flex-col relative z-10">
-                                        {/* Icon */}
-                                        <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-[rgba(129,215,66,0.2)] to-[rgba(146,171,196,0.1)] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                            <Wifi className="w-6 h-6 lg:w-7 lg:h-7 text-[#81d742]" />
-                                        </div>
-
-                                        {/* Title & Description */}
-                                        <h3 className="text-lg lg:text-xl font-bold text-white mb-2">Emalangeni Connect</h3>
-                                        <p className="text-sm text-white/80 mb-4 leading-relaxed">
-                                            High-speed fibre and wireless connectivity solutions for homes, businesses, and communities — keeping everyone seamlessly connected.
-                                        </p>
-
-                                        {/* Features */}
-                                        <ul className="hidden lg:block space-y-2 mb-4 flex-grow">
-                                            <li className="flex items-center text-white text-sm">
-                                                <div className="w-1.5 h-1.5 bg-[#81d742] rounded-full mr-2 flex-shrink-0" />
-                                                Fibre & wireless broadband
-                                            </li>
-                                            <li className="flex items-center text-white text-sm">
-                                                <div className="w-1.5 h-1.5 bg-[#81d742] rounded-full mr-2 flex-shrink-0" />
-                                                WiFi hotspot solutions
-                                            </li>
-                                            <li className="flex items-center text-white text-sm">
-                                                <div className="w-1.5 h-1.5 bg-[#81d742] rounded-full mr-2 flex-shrink-0" />
-                                                Campus-wide connectivity
-                                            </li>
-                                        </ul>
-
-                                        {/* CTA Button */}
-                                        <button className="w-full py-3 lg:py-3.5 bg-[#00343C] text-white rounded-xl font-bold group-hover:bg-[#81d742] group-hover:text-[#00343C] transition-colors flex items-center justify-center mt-auto relative z-20">
-                                            Emalangeni Connect
-                                            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                                        </button>
-                                    </div>
-                                </div>
-
-                                {/* Emalangeni Financial Services Card */}
-                                <div
-                                    onClick={() => navigate('/contact-us')}
-                                    className="group cursor-pointer relative overflow-hidden bg-transparent rounded-2xl lg:rounded-3xl border-2 border-slate-200 hover:border-[#81d742]/30 transition-all duration-300 hover:shadow-xl"
-                                >
-                                    {/* Dark overlay for contrast */}
-                                    <div className="absolute inset-0 bg-black/55 pointer-events-none" />
-                                    <div className="p-5 lg:p-6 text-left h-full flex flex-col relative z-10">
-                                        {/* Icon */}
-                                        <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-[rgba(129,215,66,0.2)] to-[rgba(146,171,196,0.1)] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                            <DollarSign className="w-6 h-6 lg:w-7 lg:h-7 text-[#81d742]" />
-                                        </div>
-
-                                        {/* Title & Description */}
-                                        <h3 className="text-lg lg:text-xl font-bold text-white mb-2">Emalangeni Financial Services</h3>
-                                        <p className="text-sm text-white/80 mb-4 leading-relaxed">
-                                            Empowering individuals and businesses with accessible, innovative financial solutions tailored to your growth and stability.
-                                        </p>
-
-                                        {/* Features */}
-                                        <ul className="hidden lg:block space-y-2 mb-4 flex-grow">
-                                            <li className="flex items-center text-white text-sm">
-                                                <div className="w-1.5 h-1.5 bg-[#81d742] rounded-full mr-2 flex-shrink-0" />
-                                                Business financial solutions
-                                            </li>
-                                            <li className="flex items-center text-white text-sm">
-                                                <div className="w-1.5 h-1.5 bg-[#81d742] rounded-full mr-2 flex-shrink-0" />
-                                                Personal financial services
-                                            </li>
-                                            <li className="flex items-center text-white text-sm">
-                                                <div className="w-1.5 h-1.5 bg-[#81d742] rounded-full mr-2 flex-shrink-0" />
-                                                Investment & growth planning
-                                            </li>
-                                        </ul>
-
-                                        {/* CTA Button */}
-                                        <button className="w-full py-3 lg:py-3.5 bg-[#00343C] text-white rounded-xl font-bold group-hover:bg-[#81d742] group-hover:text-[#00343C] transition-colors flex items-center justify-center mt-auto relative z-20">
-                                            Emalangeni Financial Services
-                                            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Abstract Background Shapes - smaller and more subtle */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none">
-                    <div className="absolute top-10 right-0 w-[500px] h-[500px] bg-[#81d742]/10 rounded-full blur-3xl opacity-50 mix-blend-multiply filter" />
-                    <div className="absolute top-20 left-0 w-[400px] h-[400px] bg-[#00343C]/10 rounded-full blur-3xl opacity-50 mix-blend-multiply filter" />
+                {/* Centered Logo */}
+                <div className="relative z-20 flex items-center justify-center w-full h-full">
+                    <img
+                        src="/images/EMALANGENI TECH ICON.png"
+                        alt="Emalangeni Technologies"
+                        className="w-64 h-64 sm:w-80 sm:h-80 lg:w-[420px] lg:h-[420px] object-contain drop-shadow-2xl"
+                    />
                 </div>
             </div>
 
