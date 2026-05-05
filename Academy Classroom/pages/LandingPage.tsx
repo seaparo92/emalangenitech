@@ -6,7 +6,9 @@ import {
     ArrowRight,
     Cpu,
     Headphones,
+    Wifi,
     Zap,
+    DollarSign,
     Code2,
     Palette,
     TrendingUp,
@@ -15,6 +17,7 @@ import {
     Target,
     Eye,
     Shield,
+    FileText,
 } from 'lucide-react';
 import { LandingNavbar } from '../components/LandingNavbar';
 import { Footer } from '../components/Footer';
@@ -49,6 +52,97 @@ export const LandingPage: React.FC = () => {
                         alt="Emalangeni Technologies"
                         className="w-64 h-64 sm:w-80 sm:h-80 lg:w-[420px] lg:h-[420px] object-contain drop-shadow-2xl"
                     />
+                </div>
+            </div>
+
+            {/* Service Cards Section */}
+            <div className="bg-[#0a0a0a] py-16 px-4 sm:px-6 lg:px-8">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                    {/* Emalangeni Connect */}
+                    <div className="rounded-2xl border-2 border-[#81d742] bg-[#0d0d0d] p-6 flex flex-col gap-4 hover:shadow-[0_0_24px_rgba(129,215,66,0.25)] transition-shadow">
+                        <div className="flex items-start justify-between">
+                            <div className="flex items-center gap-3">
+                                <img src="/images/EMALANGENI TECH ICON.png" alt="" className="w-10 h-10 object-contain" />
+                                <div>
+                                    <p className="text-white font-bold text-sm leading-none">EMALANGENI<sup className="text-[#81d742] text-[8px]">®</sup></p>
+                                    <p className="text-[#81d742] text-xs font-semibold tracking-widest uppercase">Connect</p>
+                                </div>
+                            </div>
+                            <Wifi className="w-10 h-10 text-white" />
+                        </div>
+                        <ul className="space-y-1 flex-grow">
+                            {['Fibre & Wireless broadband.', 'Wi-fi hotspot solutions', 'Campus wide connectivity'].map(item => (
+                                <li key={item} className="flex items-center gap-2 text-white/80 text-sm">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#81d742] flex-shrink-0" />
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                        <button
+                            onClick={() => navigate('/services-solutions')}
+                            className="self-end mt-2 px-6 py-2 rounded-full border border-white/30 bg-[#1a1a1a] text-white text-sm font-semibold hover:bg-[#81d742] hover:text-[#0d0d0d] hover:border-[#81d742] transition-all"
+                        >
+                            Connect
+                        </button>
+                    </div>
+
+                    {/* Emalangeni Financial Services */}
+                    <div className="rounded-2xl border-2 border-[#81d742] bg-[#0d0d0d] p-6 flex flex-col gap-4 hover:shadow-[0_0_24px_rgba(129,215,66,0.25)] transition-shadow">
+                        <div className="flex items-start justify-between">
+                            <div className="flex items-center gap-3">
+                                <img src="/images/EMALANGENI TECH ICON.png" alt="" className="w-10 h-10 object-contain" />
+                                <div>
+                                    <p className="text-white font-bold text-sm leading-none">EMALANGENI<sup className="text-[#81d742] text-[8px]">®</sup></p>
+                                    <p className="text-[#81d742] text-xs font-semibold tracking-widest uppercase">Financial Services</p>
+                                </div>
+                            </div>
+                            <DollarSign className="w-10 h-10 text-white" />
+                        </div>
+                        <ul className="space-y-1 flex-grow">
+                            {['Business financial solutions', 'Personal financial services', 'Investment & growth planning'].map(item => (
+                                <li key={item} className="flex items-center gap-2 text-white/80 text-sm">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#81d742] flex-shrink-0" />
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                        <button
+                            onClick={() => navigate('/contact-us')}
+                            className="self-end mt-2 px-6 py-2 rounded-full border border-white/30 bg-[#1a1a1a] text-white text-sm font-semibold hover:bg-[#81d742] hover:text-[#0d0d0d] hover:border-[#81d742] transition-all"
+                        >
+                            Finance
+                        </button>
+                    </div>
+
+                    {/* Emalangeni Automation */}
+                    <div className="rounded-2xl border-2 border-[#81d742] bg-[#0d0d0d] p-6 flex flex-col gap-4 hover:shadow-[0_0_24px_rgba(129,215,66,0.25)] transition-shadow">
+                        <div className="flex items-start justify-between">
+                            <div className="flex items-center gap-3">
+                                <img src="/images/EMALANGENI TECH ICON.png" alt="" className="w-10 h-10 object-contain" />
+                                <div>
+                                    <p className="text-white font-bold text-sm leading-none">EMALANGENI<sup className="text-[#81d742] text-[8px]">®</sup></p>
+                                    <p className="text-[#81d742] text-xs font-semibold tracking-widest uppercase">Automation</p>
+                                </div>
+                            </div>
+                            <FileText className="w-10 h-10 text-white" />
+                        </div>
+                        <ul className="space-y-1 flex-grow">
+                            {['Business process automation', 'Workflow optimisation', 'Smart system integration'].map(item => (
+                                <li key={item} className="flex items-center gap-2 text-white/80 text-sm">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#81d742] flex-shrink-0" />
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                        <button
+                            onClick={() => navigate('/contact-us')}
+                            className="self-end mt-2 px-6 py-2 rounded-full border border-white/30 bg-[#1a1a1a] text-white text-sm font-semibold hover:bg-[#81d742] hover:text-[#0d0d0d] hover:border-[#81d742] transition-all"
+                        >
+                            Automation
+                        </button>
+                    </div>
+
                 </div>
             </div>
 
